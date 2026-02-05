@@ -57,8 +57,8 @@ const FeatureCard = memo(({ icon, title, description, detail }: {
 
 // CTA Section Component
 const CTASection = memo(({ dark = false }: { dark?: boolean }) => (
-  <section className={`py-16 px-4 ${dark ? 'bg-gradient-to-b from-wth-slate to-wth-dark' : 'bg-gradient-to-b from-slate-100 to-white'}`}>
-    <div className="max-w-4xl mx-auto text-center">
+  <section className={`w-full py-16 px-6 lg:px-8 ${dark ? 'bg-gradient-to-b from-wth-slate to-wth-dark' : 'bg-gradient-to-b from-slate-100 to-white'}`}>
+    <div className="w-full max-w-4xl mx-auto text-center">
       <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${dark ? 'text-white' : 'text-slate-900'}`}>
         Ready to elevate your productivity?
       </h2>
@@ -83,10 +83,10 @@ export default function WinTheHourLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-wth-dark text-white font-display scroll-smooth">
+    <div className="min-h-screen w-full bg-wth-dark text-white font-display scroll-smooth">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-wth-dark/90 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
+      <header className="sticky top-0 z-50 w-full bg-wth-dark/90 backdrop-blur-md border-b border-white/5">
+        <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
           <a href="#" className="flex items-center gap-3 group">
             <Logo className="w-10 h-10" />
             <span className="font-bold text-lg italic">Win The Hour!™</span>
@@ -122,9 +122,9 @@ export default function WinTheHourLanding() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark">
+      <section id="home" className="relative w-full overflow-hidden bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark">
         <div className="absolute inset-0 bg-textured" />
-        <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -162,9 +162,9 @@ export default function WinTheHourLanding() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 md:py-24 bg-wth-dark relative">
+      <section id="features" className="w-full py-16 md:py-24 bg-wth-dark relative">
         <div className="absolute inset-0 bg-gradient-to-b from-wth-slate/30 to-transparent" />
-        <div className="relative max-w-6xl mx-auto px-4">
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -215,9 +215,9 @@ export default function WinTheHourLanding() {
       <CTASection dark />
 
       {/* Testimonial Section */}
-      <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark relative overflow-hidden">
+      <section id="about" className="w-full py-16 md:py-24 bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-textured" />
-        <div className="relative max-w-6xl mx-auto px-4">
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -258,8 +258,8 @@ export default function WinTheHourLanding() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-wth-dark to-slate-900">
-        <div className="max-w-4xl mx-auto text-center px-4">
+      <section className="w-full py-16 md:py-20 bg-gradient-to-b from-wth-dark to-slate-900">
+        <div className="w-full max-w-4xl mx-auto text-center px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,8 +278,8 @@ export default function WinTheHourLanding() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-slate-950 border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-4 py-12">
+      <footer id="contact" className="w-full bg-slate-950 border-t border-white/10">
+        <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">

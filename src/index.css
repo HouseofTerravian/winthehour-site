@@ -7,10 +7,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Background texture overlay */
