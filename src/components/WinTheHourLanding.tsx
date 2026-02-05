@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 
+const HERO_IMAGE = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=faces";
+const TESTIMONIAL_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=faces";
+
 export default function WinTheHourLanding() {
   const heroTextRef = useRef<HTMLDivElement>(null);
   const heroImageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Trigger animations on mount
     if (heroTextRef.current) {
       heroTextRef.current.classList.remove("opacity-0");
       heroTextRef.current.classList.add("animate-fadeInLeft");
@@ -41,9 +43,9 @@ export default function WinTheHourLanding() {
             </a>
           </div>
 
-          <button className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
+          <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
             Get Started
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -58,14 +60,14 @@ export default function WinTheHourLanding() {
             <p className="text-xl text-[#FFFFFF] mb-8 opacity-90">
               Win The Hour!™ helps you achieve your goals by focusing on hourly targets and making every minute count.
             </p>
-            <button className="bg-[#FF5E1A] text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
+            <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
               Join the Movement
-            </button>
+            </a>
           </div>
 
           <div ref={heroImageRef} className="relative opacity-0 delay-200">
             <img
-              src="/wth-hero-female.png"
+              src={HERO_IMAGE}
               alt="Win The Hour Success Story"
               className="w-full h-auto rounded-3xl shadow-2xl border border-[#3C4F65]"
             />
@@ -149,9 +151,9 @@ export default function WinTheHourLanding() {
           <p className="text-xl text-[#FFFFFF] mb-8 opacity-80">
             Join thousands who are transforming their days, one hour at a time.
           </p>
-          <button className="bg-[#FF5E1A] text-[#FFFFFF] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
+          <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
             Join The Movement
-          </button>
+          </a>
         </div>
       </section>
 
@@ -168,7 +170,7 @@ export default function WinTheHourLanding() {
 
           <div className="relative">
             <img
-              src="/wth-hero-male.png"
+              src={TESTIMONIAL_IMAGE}
               alt="Professional Success with Win The Hour"
               className="w-full h-auto rounded-3xl shadow-2xl border border-[#3C4F65]"
             />
@@ -187,9 +189,9 @@ export default function WinTheHourLanding() {
             <br />
             one hour at a time.
           </p>
-          <button className="bg-[#FF5E1A] text-[#FFFFFF] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
+          <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
             Join The Movement
-          </button>
+          </a>
         </div>
       </section>
 
