@@ -162,8 +162,9 @@ export default function WinTheHourLanding() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 md:py-24 bg-gradient-to-b from-slate-100 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="features" className="py-16 md:py-24 bg-wth-dark relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-wth-slate/30 to-transparent" />
+        <div className="relative max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
