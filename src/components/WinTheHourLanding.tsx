@@ -57,7 +57,7 @@ const FeatureCard = memo(({ icon, title, description, detail }: {
 
 // CTA Section Component
 const CTASection = memo(({ dark = false }: { dark?: boolean }) => (
-  <section className={`py-16 px-4 ${dark ? 'bg-gradient-to-b from-slate-800 to-wth-dark' : 'bg-gradient-to-b from-indigo-50 to-slate-100'}`}>
+  <section className={`py-16 px-4 ${dark ? 'bg-gradient-to-b from-wth-slate to-wth-dark' : 'bg-gradient-to-b from-slate-100 to-white'}`}>
     <div className="max-w-4xl mx-auto text-center">
       <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${dark ? 'text-white' : 'text-slate-900'}`}>
         Ready to elevate your productivity?
@@ -122,7 +122,7 @@ export default function WinTheHourLanding() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-wth-dark">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark">
         <div className="absolute inset-0 bg-textured" />
         <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -154,7 +154,7 @@ export default function WinTheHourLanding() {
                   alt="Professional woman smiling confidently"
                   className="w-full h-[400px] md:h-[500px] object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-wth-dark/60 to-transparent" />
               </div>
             </motion.div>
           </div>
@@ -214,7 +214,7 @@ export default function WinTheHourLanding() {
       <CTASection dark />
 
       {/* Testimonial Section */}
-      <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-slate-800 via-purple-900 to-wth-dark relative overflow-hidden">
+      <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-wth-blue via-wth-slate to-wth-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-textured" />
         <div className="relative max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -249,7 +249,7 @@ export default function WinTheHourLanding() {
                   alt="Professional businessman checking his watch"
                   className="w-full h-[450px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-wth-dark/70 to-transparent" />
               </div>
             </motion.div>
           </div>

@@ -8,13 +8,13 @@ export default {
     extend: {
       colors: {
         'wth': {
-          'dark': '#0F0518',
-          'purple': '#1A0A2E',
+          'dark': '#0B0C10',        // Charcoal Black - background, navbar
+          'slate': '#1F2025',       // Slate Gray - card shadows/depth
+          'blue': '#3C4F65',        // Steel Blue Tint - blue undertone, dividers
           'orange': {
-            300: '#FFB347',
-            400: '#FFA033',
-            500: '#FF8C00',
-            600: '#FF6B35',
+            400: '#FF7A3D',         // Lighter orange for hover
+            500: '#FF5E1A',         // Molten Orange - primary CTA
+            600: '#E54D0F',         // Darker orange for active
           },
         },
       },
@@ -23,14 +23,14 @@ export default {
         'serif': ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'glossy': 'inset 0 1px 1px rgba(255,255,255,0.4), 0 4px 15px rgba(255,140,0,0.4)',
-        'glossy-hover': 'inset 0 1px 1px rgba(255,255,255,0.5), 0 6px 25px rgba(255,140,0,0.5)',
+        'glossy': 'inset 0 1px 1px rgba(255,255,255,0.4), 0 4px 15px rgba(255,94,26,0.4)',
+        'glossy-hover': 'inset 0 1px 1px rgba(255,255,255,0.5), 0 6px 25px rgba(255,94,26,0.5)',
         'glass': '0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #2D1B4E 0%, #1A0A2E 50%, #0F0518 100%)',
-        'cta-gradient': 'linear-gradient(180deg, #1A1A2E 0%, #0F0518 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #3C4F65 0%, #1F2025 50%, #0B0C10 100%)',
+        'cta-gradient': 'linear-gradient(180deg, #1F2025 0%, #0B0C10 100%)',
       },
     },
   },
