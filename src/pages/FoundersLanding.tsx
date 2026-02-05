@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { memo, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
-import { Card, CardTitle, CardDescription } from "./ui/card";
-import { Logo } from "./icons/Logo";
-import { ClockCheckIcon } from "./icons/ClockCheckIcon";
+import { Button } from "../components/ui/button";
+import { Card, CardTitle, CardDescription } from "../components/ui/card";
+import { Logo } from "../components/icons/Logo";
+import { ClockCheckIcon } from "../components/icons/ClockCheckIcon";
 
-// Unsplash images - matching mockup design
-const HERO_IMAGE = "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=600&h=700&fit=crop&crop=faces"; // Black woman, natural hair, confident smile
-const TESTIMONIAL_IMAGE = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=600&fit=crop&crop=faces"; // Man in suit
+// Unsplash images - entrepreneur/founder themed
+const HERO_IMAGE = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=700&fit=crop&crop=faces";
+const TESTIMONIAL_IMAGE = "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&h=600&fit=crop&crop=faces";
 
 // Mobile Navigation
 const MobileNav = memo(({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
@@ -60,17 +60,17 @@ const CTASection = memo(({ dark = false }: { dark?: boolean }) => (
   <section className={`py-16 px-4 ${dark ? 'bg-gradient-to-b from-slate-800 to-wth-dark' : 'bg-gradient-to-b from-indigo-50 to-slate-100'}`}>
     <div className="max-w-4xl mx-auto text-center">
       <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${dark ? 'text-white' : 'text-slate-900'}`}>
-        Ready to elevate your productivity?
+        Ready to 10x your output?
       </h2>
       <p className={`mb-8 ${dark ? 'text-white/70' : 'text-slate-600'}`}>
-        Join thousands who are transforming their days, one hour at a time.
+        Join thousands of founders and freelancers who've taken control of their time.
       </p>
-      <Button size="lg">Join The Movement</Button>
+      <Button size="lg">Start Winning Your Hours</Button>
     </div>
   </section>
 ));
 
-export default function WinTheHourLanding() {
+export default function FoundersLanding() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -131,15 +131,18 @@ export default function WinTheHourLanding() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <span className="inline-block bg-wth-orange-500/20 text-wth-orange-400 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                For Founders & Freelancers
+              </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                Transform Your Life,
+                Your Time Is Money,
                 <br />
-                <span className="text-white">One Hour at a Time</span>
+                <span className="text-white">Stop Leaving It On The Table</span>
               </h1>
               <p className="text-white/80 text-lg mb-8 max-w-lg">
-                Win The Hour!™ helps you achieve your goals by focusing on hourly targets and making every minute count.
+                Every billable hour lost is revenue gone. Win The Hour!™ helps entrepreneurs and freelancers maximize every working moment.
               </p>
-              <Button size="lg">Join the Movement</Button>
+              <Button size="lg">Start Your Free Trial</Button>
             </motion.div>
 
             <motion.div
@@ -151,7 +154,7 @@ export default function WinTheHourLanding() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={HERO_IMAGE}
-                  alt="Professional woman smiling confidently"
+                  alt="Confident entrepreneur in business attire"
                   className="w-full h-[400px] md:h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent" />
@@ -173,9 +176,9 @@ export default function WinTheHourLanding() {
             >
               <FeatureCard
                 icon={<ClockCheckIcon className="w-20 h-20" />}
-                title="Win Every Hour"
-                description="Stay focused and accountable."
-                detail="Check in hourly, set intentional goals, and track your progress."
+                title="Track Billable Hours"
+                description="Know your true rate."
+                detail="See exactly where your time goes and optimize for revenue."
               />
             </motion.div>
 
@@ -187,9 +190,9 @@ export default function WinTheHourLanding() {
             >
               <FeatureCard
                 icon={<ClockCheckIcon className="w-20 h-20" />}
-                title="Track Your Progress"
-                description="See your achievements grow."
-                detail="Review your streaks, completed tasks, and focus time."
+                title="Eliminate Time Leaks"
+                description="Stop bleeding hours."
+                detail="Identify and kill the tasks that drain time without ROI."
               />
             </motion.div>
 
@@ -201,9 +204,9 @@ export default function WinTheHourLanding() {
             >
               <FeatureCard
                 icon={<ClockCheckIcon className="w-20 h-20" />}
-                title="Recover with Compassion"
-                description="Reset without guilt."
-                detail="Break free from perfectionism and maintain momentum guilt-free."
+                title="Scale Your Output"
+                description="Do more in less time."
+                detail="Hourly accountability compounds into massive yearly gains."
               />
             </motion.div>
           </div>
@@ -227,12 +230,12 @@ export default function WinTheHourLanding() {
             >
               <div className="text-wth-orange-400 text-6xl font-serif leading-none mb-4">"</div>
               <blockquote className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
-                <strong className="text-white">Either get this app or be a loser!</strong>
+                <strong className="text-white">I found 15 extra billable hours per week. That's $75K/year I was leaving on the table.</strong>
                 <br />
-                I used to wonder what I did with my days, or, even worse, on productive days still feel I wasn't doing enough. Now, my stats don't lie!! I LOVE the feeling of success and satisfaction this app brings.
+                As a consultant, I thought I was efficient. Win The Hour showed me how much time I was wasting on "busy work" that didn't move the needle. Game changer.
               </blockquote>
               <cite className="text-wth-orange-400 font-bold not-italic text-lg">
-                Greg S.
+                David K. — Strategy Consultant, Solo Practice
               </cite>
             </motion.div>
 
@@ -246,7 +249,7 @@ export default function WinTheHourLanding() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={TESTIMONIAL_IMAGE}
-                  alt="Professional businessman checking his watch"
+                  alt="Focused entrepreneur working"
                   className="w-full h-[450px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent" />
@@ -266,12 +269,12 @@ export default function WinTheHourLanding() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-              Ready to elevate your productivity?
+              Time is your most valuable asset. Treat it like one.
             </h2>
             <p className="text-white/70 mb-8">
-              Join thousands who are transforming their days, one hour at a time.
+              Join thousands of founders who've stopped trading time for money inefficiently.
             </p>
-            <Button size="lg">Join The Movement</Button>
+            <Button size="lg">Get Started Free</Button>
           </motion.div>
         </div>
       </section>
@@ -286,7 +289,7 @@ export default function WinTheHourLanding() {
                 <span className="font-bold text-lg italic">Win The Hour!™</span>
               </div>
               <p className="text-white/60 text-sm max-w-sm">
-                Transform your productivity one hour at a time. Join thousands who are making every minute count.
+                The productivity app built for entrepreneurs who know that time is their most valuable currency.
               </p>
             </div>
 

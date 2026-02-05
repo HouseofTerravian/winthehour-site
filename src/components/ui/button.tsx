@@ -8,18 +8,20 @@ function cn(...inputs: (string | undefined | null | false)[]) {
 }
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-400 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-red-500 to-amber-500 text-black shadow hover:from-red-400 hover:to-amber-400",
-        outline: "border border-red-400 text-red-400 hover:bg-red-500/10",
-        ghost: "hover:bg-white/10",
+        default: "bg-gradient-to-b from-wth-orange-400 via-wth-orange-500 to-wth-orange-600 text-white rounded-full shadow-glossy hover:shadow-glossy-hover hover:-translate-y-0.5 btn-glossy",
+        outline: "border-2 border-indigo-500 text-indigo-400 rounded-full hover:bg-indigo-500/10 hover:border-indigo-400",
+        ghost: "hover:bg-white/10 rounded-lg",
+        nav: "text-white/80 hover:text-white font-medium",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-8 px-3 text-xs",
-        lg: "h-12 px-6 text-base",
+        default: "h-12 px-8 py-3 text-base",
+        sm: "h-9 px-4 py-2 text-sm",
+        lg: "h-14 px-10 py-4 text-lg",
+        nav: "h-auto px-0 py-0 text-sm",
       },
     },
     defaultVariants: {
