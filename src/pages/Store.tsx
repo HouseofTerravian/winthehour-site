@@ -55,9 +55,8 @@ export default function Store() {
       {/* Hero */}
       <section className="min-h-[100vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
         <div className="w-full max-w-[1600px] mx-auto text-center py-40">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-16 leading-tight">
-            Choose Your{" "}
-            <span className="text-[#FF5E1A]">Plan</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 leading-tight">
+            Choose Your <span className="text-[#FF5E1A]">Plan</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl opacity-80 leading-relaxed max-w-3xl mx-auto">
             Start for free. Upgrade when you're ready for the full experience.
@@ -66,35 +65,43 @@ export default function Store() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
+      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
         <div className="w-full max-w-[1100px] mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 md:gap-24 lg:gap-32">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-3xl p-16 md:p-20 lg:p-24 border transition-all duration-300 ${
+                className={`rounded-3xl p-12 md:p-16 lg:p-20 border-2 transition-all duration-300 ${
                   tier.highlighted
                     ? "bg-gradient-to-b from-[#FF5E1A]/10 to-[#0B0C10] border-[#FF5E1A]/50 shadow-2xl shadow-[#FF5E1A]/10"
                     : "bg-[#0B0C10] border-[#3C4F65] shadow-lg"
                 }`}
               >
                 {tier.highlighted && (
-                  <div className="inline-block bg-[#FF5E1A] text-[#FFFFFF] px-4 py-1 rounded-full text-sm font-semibold mb-14">
+                  <div className="inline-block bg-[#FF5E1A] text-[#FFFFFF] px-4 py-1 rounded-full text-sm font-semibold mb-10">
                     Most Popular
                   </div>
                 )}
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">{tier.name}</h3>
-                <div className="flex items-baseline gap-1 mb-12">
-                  <span className="text-4xl md:text-5xl font-bold text-[#FF5E1A]">{tier.price}</span>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  {tier.name}
+                </h3>
+                <div className="flex items-baseline gap-1 mb-8">
+                  <span className="text-4xl md:text-5xl font-bold text-[#FF5E1A]">
+                    {tier.price}
+                  </span>
                   <span className="text-lg opacity-60">{tier.period}</span>
                 </div>
-                <p className="opacity-70 mb-16 leading-relaxed text-lg">{tier.description}</p>
+                <p className="opacity-70 mb-12 leading-relaxed text-lg">
+                  {tier.description}
+                </p>
 
-                <ul className="space-y-8 mb-20">
+                <ul className="space-y-6 mb-14">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <span className="text-[#FF5E1A] mt-0.5 font-bold">✓</span>
+                      <span className="text-[#FF5E1A] mt-0.5 font-bold">
+                        ✓
+                      </span>
                       <span className="opacity-80">{feature}</span>
                     </li>
                   ))}
@@ -117,24 +124,30 @@ export default function Store() {
       </section>
 
       {/* FAQ */}
-      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
         <div className="w-full max-w-[1100px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-40 md:mb-52 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-28 md:mb-36 text-center">
             Frequently <span className="text-[#FF5E1A]">Asked</span>
           </h2>
 
-          <div className="space-y-14">
+          <div className="space-y-10">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-[#1F2025] rounded-2xl p-16 md:p-20 border border-[#3C4F65]">
-                <h3 className="text-xl font-bold mb-8">{faq.q}</h3>
+              <div
+                key={faq.q}
+                className="bg-[#1F2025] rounded-3xl p-12 md:p-16 border-2 border-[#3C4F65]"
+              >
+                <h3 className="text-xl font-bold mb-6">{faq.q}</h3>
                 <p className="opacity-70 leading-relaxed text-lg">{faq.a}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-40">
-            <p className="opacity-60 mb-14 text-lg">Have more questions?</p>
-            <Link to="/contact" className="text-[#FF5E1A] font-semibold text-lg hover:underline transition-colors">
+          <div className="text-center mt-28">
+            <p className="opacity-60 mb-10 text-lg">Have more questions?</p>
+            <Link
+              to="/contact"
+              className="text-[#FF5E1A] font-semibold text-lg hover:underline transition-colors"
+            >
               Contact us →
             </Link>
           </div>
