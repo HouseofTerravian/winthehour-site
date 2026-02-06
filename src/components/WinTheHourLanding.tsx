@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=faces";
-const TESTIMONIAL_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=faces";
+const HERO_IMAGE = "/wth-hero-female.png";
+const TESTIMONIAL_IMAGE = "/wth-hero-male.png";
 
 export default function WinTheHourLanding() {
   const heroTextRef = useRef<HTMLDivElement>(null);
