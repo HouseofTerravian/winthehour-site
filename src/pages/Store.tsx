@@ -34,13 +34,28 @@ const tiers = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Can I try Pro before committing?",
+    a: "Start with Free and upgrade anytime. Your data carries over seamlessly.",
+  },
+  {
+    q: "What happens to my data if I cancel Pro?",
+    a: "You keep all your historical data. You'll just revert to Free-tier features.",
+  },
+  {
+    q: "Is there a team or family plan?",
+    a: "Not yet — but it's on our roadmap. Contact us to let us know you're interested.",
+  },
+];
+
 export default function Store() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 md:pt-36 pb-16 md:pb-24 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10]">
-        <div className="w-full max-w-[1600px] mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+      <section className="min-h-[100vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+        <div className="w-full max-w-[1600px] mx-auto text-center py-40">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-16 leading-tight">
             Choose Your{" "}
             <span className="text-[#FF5E1A]">Plan</span>
           </h1>
@@ -51,32 +66,32 @@ export default function Store() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-24 md:py-36 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#1F2025]">
+      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
         <div className="w-full max-w-[1100px] mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24 lg:gap-32">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`rounded-3xl p-8 md:p-10 lg:p-12 border transition-all duration-300 ${
+                className={`rounded-3xl p-16 md:p-20 lg:p-24 border transition-all duration-300 ${
                   tier.highlighted
                     ? "bg-gradient-to-b from-[#FF5E1A]/10 to-[#0B0C10] border-[#FF5E1A]/50 shadow-2xl shadow-[#FF5E1A]/10"
                     : "bg-[#0B0C10] border-[#3C4F65] shadow-lg"
                 }`}
               >
                 {tier.highlighted && (
-                  <div className="inline-block bg-[#FF5E1A] text-[#FFFFFF] px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                  <div className="inline-block bg-[#FF5E1A] text-[#FFFFFF] px-4 py-1 rounded-full text-sm font-semibold mb-14">
                     Most Popular
                   </div>
                 )}
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">{tier.name}</h3>
-                <div className="flex items-baseline gap-1 mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold mb-6">{tier.name}</h3>
+                <div className="flex items-baseline gap-1 mb-12">
                   <span className="text-4xl md:text-5xl font-bold text-[#FF5E1A]">{tier.price}</span>
                   <span className="text-lg opacity-60">{tier.period}</span>
                 </div>
-                <p className="opacity-70 mb-8 leading-relaxed">{tier.description}</p>
+                <p className="opacity-70 mb-16 leading-relaxed text-lg">{tier.description}</p>
 
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-8 mb-20">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <span className="text-[#FF5E1A] mt-0.5 font-bold">✓</span>
@@ -102,36 +117,23 @@ export default function Store() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-36 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10] border-t border-[#1F2025]">
+      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
         <div className="w-full max-w-[1100px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14 md:mb-20 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-40 md:mb-52 text-center">
             Frequently <span className="text-[#FF5E1A]">Asked</span>
           </h2>
 
-          <div className="space-y-6">
-            {[
-              {
-                q: "Can I try Pro before committing?",
-                a: "Start with Free and upgrade anytime. Your data carries over seamlessly.",
-              },
-              {
-                q: "What happens to my data if I cancel Pro?",
-                a: "You keep all your historical data. You'll just revert to Free-tier features.",
-              },
-              {
-                q: "Is there a team or family plan?",
-                a: "Not yet — but it's on our roadmap. Contact us to let us know you're interested.",
-              },
-            ].map((faq) => (
-              <div key={faq.q} className="bg-[#1F2025] rounded-2xl p-8 md:p-10 border border-[#3C4F65]">
-                <h3 className="text-xl font-bold mb-3">{faq.q}</h3>
-                <p className="opacity-70 leading-relaxed">{faq.a}</p>
+          <div className="space-y-14">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="bg-[#1F2025] rounded-2xl p-16 md:p-20 border border-[#3C4F65]">
+                <h3 className="text-xl font-bold mb-8">{faq.q}</h3>
+                <p className="opacity-70 leading-relaxed text-lg">{faq.a}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-14">
-            <p className="opacity-60 mb-6">Have more questions?</p>
+          <div className="text-center mt-40">
+            <p className="opacity-60 mb-14 text-lg">Have more questions?</p>
             <Link to="/contact" className="text-[#FF5E1A] font-semibold text-lg hover:underline transition-colors">
               Contact us →
             </Link>

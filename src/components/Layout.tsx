@@ -24,9 +24,8 @@ export default function Layout() {
     <div className="bg-[#0B0C10] text-[#FFFFFF] min-h-screen w-full overflow-x-hidden">
       <ScrollToTop />
 
-      {/* Navigation */}
       <nav className="fixed top-0 w-full bg-[#0B0C10]/95 backdrop-blur-lg z-50 border-b border-[#1F2025]">
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-5 flex items-center justify-between">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 py-5 flex items-center justify-between">
           <NavLink to="/" onClick={closeMobile} className="flex items-center gap-2 text-xl font-bold text-[#FFFFFF]">
             <span className="text-2xl">✓</span>
             <span>Win The Hour!™</span>
@@ -74,12 +73,11 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      {/* Footer */}
-      <footer className="py-12 md:py-16 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10] border-t border-[#1F2025]">
+      <footer className="py-48 md:py-64 px-6 sm:px-10 lg:px-16 xl:px-24 bg-[#0B0C10] border-t border-[#1F2025]">
         <div className="w-full max-w-[1600px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-28 mb-32">
             <div className="sm:col-span-2 lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
+              <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-10">
                 <span className="text-2xl">✓</span>
                 <span>Win The Hour!™</span>
               </Link>
@@ -89,8 +87,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Navigate</h4>
-              <ul className="space-y-2 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-10">Navigate</h4>
+              <ul className="space-y-6 text-[#FFFFFF]/60 text-sm">
                 <li><Link to="/" className="hover:text-[#FFFFFF] transition-colors">Home</Link></li>
                 <li><Link to="/features" className="hover:text-[#FFFFFF] transition-colors">Features</Link></li>
                 <li><Link to="/about" className="hover:text-[#FFFFFF] transition-colors">About</Link></li>
@@ -99,8 +97,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Support</h4>
-              <ul className="space-y-2 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-10">Support</h4>
+              <ul className="space-y-6 text-[#FFFFFF]/60 text-sm">
                 <li><Link to="/contact" className="hover:text-[#FFFFFF] transition-colors">Contact Us</Link></li>
                 <li><Link to="/contact" className="hover:text-[#FFFFFF] transition-colors">Request Support</Link></li>
                 <li><Link to="/contact" className="hover:text-[#FFFFFF] transition-colors">Suggest Improvements</Link></li>
@@ -108,8 +106,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-10">Legal</h4>
+              <ul className="space-y-6 text-[#FFFFFF]/60 text-sm">
                 <li><a href="#" className="hover:text-[#FFFFFF] transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-[#FFFFFF] transition-colors">Terms of Use</a></li>
                 <li><a href="#" className="hover:text-[#FFFFFF] transition-colors">Cookie Policy</a></li>
@@ -117,7 +115,7 @@ export default function Layout() {
             </div>
           </div>
 
-          <div className="border-t border-[#1F2025] pt-8 text-center text-[#FFFFFF]/50 text-sm">
+          <div className="border-t border-[#1F2025] pt-16 text-center text-[#FFFFFF]/50 text-sm">
             <p>&copy; 2026 Win The Hour!™ All rights reserved.</p>
           </div>
         </div>

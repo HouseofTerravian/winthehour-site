@@ -27,13 +27,13 @@ export default function Contact() {
 
   if (submitted) {
     return (
-      <section className="min-h-[80vh] pt-28 md:pt-36 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10] flex items-center justify-center">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="text-6xl mb-8">✓</div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+      <section className="min-h-[100vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+        <div className="max-w-2xl mx-auto text-center py-40">
+          <div className="text-7xl mb-16">✓</div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14">
             Message <span className="text-[#FF5E1A]">Sent!</span>
           </h1>
-          <p className="text-lg sm:text-xl opacity-80 leading-relaxed mb-10">
+          <p className="text-lg sm:text-xl opacity-80 leading-relaxed mb-20">
             Thanks for reaching out. We'll get back to you as soon as possible.
           </p>
           <button
@@ -53,25 +53,24 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 md:pt-36 pb-16 md:pb-24 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10]">
-        <div className="w-full max-w-[1600px] mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+      <section className="min-h-[90vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+        <div className="w-full max-w-[1600px] mx-auto text-center py-40">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-16 leading-tight">
             Get In{" "}
             <span className="text-[#FF5E1A]">Touch</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl opacity-80 leading-relaxed max-w-3xl mx-auto">
-            Have a question about Win The Hour!™? Need support? Want to suggest an improvement? We're listening.
+            Have a question? Need support? Want to suggest an improvement? We're listening.
           </p>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className="py-24 md:py-36 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#1F2025]">
-        <div className="w-full max-w-[800px] mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Name */}
+      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
+        <div className="w-full max-w-[700px] mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-16">
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold mb-3 opacity-90">
+              <label htmlFor="name" className="block text-sm font-semibold mb-6 opacity-90">
                 Your Name
               </label>
               <input
@@ -82,13 +81,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-5 py-4 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg"
+                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-6 py-5 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg"
               />
             </div>
 
-            {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold mb-3 opacity-90">
+              <label htmlFor="email" className="block text-sm font-semibold mb-6 opacity-90">
                 Email Address
               </label>
               <input
@@ -99,13 +97,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-5 py-4 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg"
+                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-6 py-5 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg"
               />
             </div>
 
-            {/* Inquiry Type Dropdown */}
             <div>
-              <label htmlFor="inquiryType" className="block text-sm font-semibold mb-3 opacity-90">
+              <label htmlFor="inquiryType" className="block text-sm font-semibold mb-6 opacity-90">
                 What can we help with?
               </label>
               <select
@@ -114,7 +111,7 @@ export default function Contact() {
                 required
                 value={formData.inquiryType}
                 onChange={handleChange}
-                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-5 py-4 text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg appearance-none cursor-pointer"
+                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-6 py-5 text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg appearance-none cursor-pointer"
               >
                 {inquiryTypes.map((type) => (
                   <option key={type.value} value={type.value} disabled={type.value === ""}>
@@ -124,9 +121,8 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold mb-3 opacity-90">
+              <label htmlFor="message" className="block text-sm font-semibold mb-6 opacity-90">
                 Your Message
               </label>
               <textarea
@@ -137,12 +133,11 @@ export default function Contact() {
                 onChange={handleChange}
                 rows={6}
                 placeholder="Tell us what's on your mind..."
-                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-5 py-4 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg resize-none"
+                className="w-full bg-[#0B0C10] border border-[#3C4F65] rounded-xl px-6 py-5 text-[#FFFFFF] placeholder-[#FFFFFF]/30 focus:outline-none focus:ring-2 focus:ring-[#FF5E1A] focus:border-transparent transition-all text-lg resize-none"
               />
             </div>
 
-            {/* Submit */}
-            <div className="pt-4">
+            <div className="pt-10">
               <button
                 type="submit"
                 className="w-full sm:w-auto bg-[#FF5E1A] text-[#FFFFFF] px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
@@ -154,24 +149,24 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Additional Info */}
-      <section className="py-24 md:py-36 px-6 sm:px-8 lg:px-12 xl:px-16 bg-[#0B0C10] border-t border-[#1F2025]">
-        <div className="w-full max-w-[1100px] mx-auto">
-          <div className="grid sm:grid-cols-3 gap-8 md:gap-12">
-            <div className="bg-[#1F2025] rounded-2xl p-8 md:p-10 border border-[#3C4F65] text-center">
-              <div className="text-3xl mb-4">💬</div>
-              <h3 className="text-xl font-bold mb-3">Ask About the App</h3>
-              <p className="opacity-70 leading-relaxed text-sm">Curious how Win The Hour!™ works? Want to know if it's right for you? Just ask.</p>
+      {/* Info Cards */}
+      <section className="py-64 md:py-80 lg:py-96 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+        <div className="w-full max-w-[1200px] mx-auto">
+          <div className="grid sm:grid-cols-3 gap-16 md:gap-24 lg:gap-32">
+            <div className="bg-[#1F2025] rounded-2xl p-16 lg:p-20 border border-[#3C4F65] text-center">
+              <div className="text-4xl mb-14">💬</div>
+              <h3 className="text-xl font-bold mb-8">Ask About the App</h3>
+              <p className="opacity-70 leading-relaxed">Curious how Win The Hour!™ works? Want to know if it's right for you? Just ask.</p>
             </div>
-            <div className="bg-[#1F2025] rounded-2xl p-8 md:p-10 border border-[#3C4F65] text-center">
-              <div className="text-3xl mb-4">🛠️</div>
-              <h3 className="text-xl font-bold mb-3">Request Support</h3>
-              <p className="opacity-70 leading-relaxed text-sm">Running into an issue? We're here to help you get back to winning your hours.</p>
+            <div className="bg-[#1F2025] rounded-2xl p-16 lg:p-20 border border-[#3C4F65] text-center">
+              <div className="text-4xl mb-14">🛠️</div>
+              <h3 className="text-xl font-bold mb-8">Request Support</h3>
+              <p className="opacity-70 leading-relaxed">Running into an issue? We're here to help you get back to winning your hours.</p>
             </div>
-            <div className="bg-[#1F2025] rounded-2xl p-8 md:p-10 border border-[#3C4F65] text-center">
-              <div className="text-3xl mb-4">💡</div>
-              <h3 className="text-xl font-bold mb-3">Suggest Improvements</h3>
-              <p className="opacity-70 leading-relaxed text-sm">Have an idea that would make Win The Hour!™ better? We build with our community in mind.</p>
+            <div className="bg-[#1F2025] rounded-2xl p-16 lg:p-20 border border-[#3C4F65] text-center">
+              <div className="text-4xl mb-14">💡</div>
+              <h3 className="text-xl font-bold mb-8">Suggest Improvements</h3>
+              <p className="opacity-70 leading-relaxed">Have an idea that would make Win The Hour!™ better? We build with our community in mind.</p>
             </div>
           </div>
         </div>
