@@ -13,7 +13,7 @@ const tiers = [
     features: [
       { text: "7-day streak tracking", included: true },
       { text: "Basic hourly check-ins", included: true },
-      { text: "Morning + Evening Seals", included: true },
+      { text: "Morning + Evening Flow", included: true },
       { text: "Reflection journal locked", included: false },
     ],
     cta: "Start Free",
@@ -88,9 +88,9 @@ export default function Membership() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-charcoal">
+      <section className="pt-32 pb-28 px-6 bg-charcoal">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h1 className="text-5xl sm:text-6xl font-bold mb-4">
               Choose Your <span className="text-molten">Path</span>
             </h1>
@@ -177,7 +177,7 @@ export default function Membership() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-slate">
+      <section className="py-28 px-6 bg-slate">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center">
             Frequently <span className="text-molten">Asked</span>
@@ -198,7 +198,7 @@ export default function Membership() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-charcoal text-center">
+      <section className="py-28 px-6 bg-charcoal text-center">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Start winning your hours today

@@ -48,6 +48,9 @@ export default function Layout() {
             <NavLink to="/manifesto" className={navClass}>
               Manifesto
             </NavLink>
+            <NavLink to="/blog" className={navClass}>
+              Blog
+            </NavLink>
             <NavLink to="/contact" className={navClass}>
               Contact
             </NavLink>
@@ -88,6 +91,9 @@ export default function Layout() {
               </NavLink>
               <NavLink to="/manifesto" onClick={closeMobile} className={mobileNavClass}>
                 Manifesto
+              </NavLink>
+              <NavLink to="/blog" onClick={closeMobile} className={mobileNavClass}>
+                Blog
               </NavLink>
               <NavLink to="/contact" onClick={closeMobile} className={mobileNavClass}>
                 Contact
@@ -148,6 +154,11 @@ export default function Layout() {
                 <li>
                   <Link to="/manifesto" className="hover:text-molten transition-colors">
                     Manifesto
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog" className="hover:text-molten transition-colors">
+                    Blog
                   </Link>
                 </li>
                 <li>
