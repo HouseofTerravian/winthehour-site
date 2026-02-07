@@ -73,7 +73,7 @@ export default function Manifesto() {
           <div className="text-center mt-20">
             <Link
               to="/membership"
-              className="bg-molten text-white px-12 py-5 rounded-full font-bold text-xl hover:opacity-90 transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+              className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
             >
               Join The Movement
             </Link>

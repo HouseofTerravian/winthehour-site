@@ -59,7 +59,7 @@ export default function Layout() {
           <div className="flex items-center gap-4">
             <Link
               to="/membership"
-              className="hidden md:inline-flex items-center justify-center whitespace-nowrap overflow-hidden bg-molten text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-all transform hover:scale-105 active:scale-95"
+              className="hidden md:inline-flex items-center justify-center whitespace-nowrap overflow-hidden bg-molten text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95"
             >
               Start Free
             </Link>
@@ -101,7 +101,7 @@ export default function Layout() {
               <Link
                 to="/membership"
                 onClick={closeMobile}
-                className="bg-molten text-white px-6 py-3 rounded-full font-semibold text-center hover:opacity-90 transition-all mt-2 whitespace-nowrap overflow-hidden"
+                className="bg-molten text-white px-6 py-3 rounded-full font-semibold text-center shadow-lg hover:shadow-molten/50 hover:bg-molten-dark transition-all mt-2 whitespace-nowrap overflow-hidden"
               >
                 Start Free
               </Link>
