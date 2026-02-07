@@ -4,23 +4,6 @@ import { Link } from "react-router-dom";
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
 const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
 
-function CheckCircleIcon() {
-  return (
-    <svg
-      className="w-10 h-10 text-[#FF5E1A]"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
-  );
-}
-
 export default function Home() {
   const heroTextRef = useRef<HTMLDivElement>(null);
   const heroImageRef = useRef<HTMLDivElement>(null);
@@ -39,22 +22,24 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-screen flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-charcoal">
-        <div className="w-full max-w-[1600px] mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center py-28">
+      <section className="bg-linear-to-br from-charcoal via-slate to-steel min-h-screen pt-24 px-6 flex items-center">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center py-12">
           <div ref={heroTextRef} className="opacity-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-              Transform Your Life,{" "}
-              <span className="text-orange">One Hour at a Time</span>
+            <div className="inline-block mb-4 px-4 py-2 bg-molten/20 border border-molten rounded-full text-molten text-sm font-semibold">
+              GAMIFIED PRODUCTIVITY
+            </div>
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">
+              Reclaim Your Time.<br />
+              <span className="text-molten">Win Every Hour.</span>
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl mb-10 opacity-80 leading-relaxed max-w-xl">
-              Win The Hour!™ helps you achieve your goals by focusing on hourly
-              targets and making every minute count.
+            <p className="text-xl mb-8 opacity-90 leading-relaxed">
+              Join high-performers building streaks, completing missions, and mastering their days through disciplined momentum.
             </p>
             <Link
-              to="/contact"
-              className="bg-orange text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+              to="/membership"
+              className="bg-molten text-white px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:opacity-90 transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden glow-pulse"
             >
-              Get Started
+              Start Free
             </Link>
           </div>
 
@@ -68,76 +53,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Preview */}
-      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-slate">
-        <div className="w-full max-w-[1600px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 md:mb-20 text-center">
-            Why People <span className="text-orange">Win</span>
-          </h2>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            <div className="feature-card bg-charcoal rounded-2xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-steel">
-              <div className="feature-icon w-16 h-16 mx-auto mb-8 border-2 border-orange rounded-full flex items-center justify-center">
-                <CheckCircleIcon />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Win Every Hour
-              </h3>
-              <p className="text-center leading-relaxed opacity-70">
-                Check in hourly, set intentional goals, and track your progress.
-              </p>
+      {/* Social Proof Stat Bar */}
+      <section className="py-12 px-6 bg-slate border-y border-steel">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-molten">10,000+</div>
+              <div className="text-white/70">Active Users</div>
             </div>
-
-            <div className="feature-card bg-charcoal rounded-2xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-steel">
-              <div className="feature-icon w-16 h-16 mx-auto mb-8 border-2 border-orange rounded-full flex items-center justify-center">
-                <CheckCircleIcon />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Track Your Progress
-              </h3>
-              <p className="text-center leading-relaxed opacity-70">
-                Review your streaks, completed tasks, and focus time.
-              </p>
+            <div>
+              <div className="text-4xl font-bold text-molten">1M+</div>
+              <div className="text-white/70">Hours Won</div>
             </div>
-
-            <div className="feature-card bg-charcoal rounded-2xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-steel sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
-              <div className="feature-icon w-16 h-16 mx-auto mb-8 border-2 border-orange rounded-full flex items-center justify-center">
-                <CheckCircleIcon />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">
-                Recover with Compassion
-              </h3>
-              <p className="text-center leading-relaxed opacity-70">
-                Break free from perfectionism and maintain momentum guilt-free.
-              </p>
+            <div>
+              <div className="text-4xl font-bold text-molten">347</div>
+              <div className="text-white/70">Day Streaks</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-molten">4.9★</div>
+              <div className="text-white/70">User Rating</div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-16">
-            <Link
-              to="/features"
-              className="bg-orange text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
-            >
-              Join The Movement
-            </Link>
+      {/* How It Works — 3 Pillars */}
+      <section className="py-20 px-6 bg-charcoal">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              How <span className="text-molten">WTH!</span> Works
+            </h2>
+            <p className="text-xl text-white/70">Three pillars of sovereign productivity</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="feature-card bg-slate rounded-2xl p-8 border-2 border-steel hover:shadow-2xl transition-all duration-300">
+              <div className="feature-icon w-16 h-16 mx-auto mb-6 border-2 border-molten rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-center">Hourly Check-Ins</h3>
+              <p className="font-semibold text-molten mb-3 text-center">Intentional Focus</p>
+              <p className="text-center leading-relaxed opacity-70">
+                Set goals each hour. Reflect in 30 seconds. Build awareness of where your time actually goes.
+              </p>
+            </div>
+
+            <div className="feature-card bg-slate rounded-2xl p-8 border-2 border-steel hover:shadow-2xl transition-all duration-300">
+              <div className="feature-icon w-16 h-16 mx-auto mb-6 border-2 border-molten rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-center">Streak Mastery</h3>
+              <p className="font-semibold text-molten mb-3 text-center">Gamified Accountability</p>
+              <p className="text-center leading-relaxed opacity-70">
+                Daily streaks unlock XP, badges, and tier upgrades. Visualize your consistency. Celebrate milestones.
+              </p>
+            </div>
+
+            <div className="feature-card bg-slate rounded-2xl p-8 border-2 border-steel hover:shadow-2xl transition-all duration-300 sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
+              <div className="feature-icon w-16 h-16 mx-auto mb-6 border-2 border-molten rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3 text-center">Compassionate Reset</h3>
+              <p className="font-semibold text-molten mb-3 text-center">Resilience Built In</p>
+              <p className="text-center leading-relaxed opacity-70">
+                Life happens. One free streak recovery per month. Gentle restart prompts. Progress preserved, shame removed.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-gradient-to-br from-[#3C4F65] via-[#1F2025] to-[#0B0C10]">
-        <div className="w-full max-w-[1600px] mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-10 sm:p-14 md:p-16 border-2 border-steel">
-            <div className="text-5xl lg:text-6xl text-orange mb-8 leading-none">
-              "
-            </div>
-            <p className="text-lg lg:text-xl leading-relaxed mb-10">
+      <section className="py-20 px-6 bg-linear-to-br from-steel via-slate to-charcoal">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-10 sm:p-14 border-2 border-steel">
+            <div className="text-5xl text-molten mb-6 leading-none">"</div>
+            <p className="text-lg lg:text-xl leading-relaxed mb-8">
               Either get this app or be a loser! I used to wonder what I did
               with my days, or, even worse, on productive days still feel I
               wasn't doing enough! Now, my stats don't lie! I love the feeling
               of success and satisfaction this app brings.
             </p>
-            <p className="text-xl lg:text-2xl font-bold">Adam S.</p>
+            <p className="text-xl font-bold">Adam S.</p>
+            <p className="text-white/70">Founder · 347-Day Streak</p>
           </div>
 
           <div className="relative">
@@ -148,31 +154,22 @@ export default function Home() {
             />
           </div>
         </div>
-
-        <div className="text-center mt-16">
-          <Link
-            to="/store"
-            className="bg-orange text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
-          >
-            Download
-          </Link>
-        </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-charcoal text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-10">
-            Ready to elevate your productivity?
+      <section className="py-20 px-6 bg-charcoal text-center border-y border-steel">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            Ready to Win Your Day?
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-10 md:mb-14 opacity-80 leading-relaxed">
-            Join thousands who are transforming their days, one hour at a time.
+          <p className="text-xl text-white/80 mb-10 leading-relaxed">
+            Join 10,000+ high-performers reclaiming time sovereignty.
           </p>
           <Link
-            to="/store"
-            className="bg-orange text-[#FFFFFF] px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+            to="/membership"
+            className="bg-molten text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:opacity-90 transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
           >
-            Download Now
+            Join The Movement
           </Link>
         </div>
       </section>

@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Features from './pages/Features'
-import About from './pages/About'
-import Store from './pages/Store'
+import Manifesto from './pages/Manifesto'
+import Membership from './pages/Membership'
 import Contact from './pages/Contact'
 import CampusLanding from './pages/CampusLanding'
 import RemoteLanding from './pages/RemoteLanding'
@@ -17,8 +17,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<Features />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/manifesto" element={<Manifesto />} />
+          <Route path="/membership" element={<Membership />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="/campus" element={<CampusLanding />} />
