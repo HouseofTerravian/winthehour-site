@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const HERO_IMAGE = "/wth-hero-female.png";
-const TESTIMONIAL_IMAGE = "/wth-hero-male.png";
+const HERO_IMAGE = "/wth-hero-female-web.jpg";
+const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
 
 export default function WinTheHourLanding() {
   const heroTextRef = useRef<HTMLDivElement>(null);

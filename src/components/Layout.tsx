@@ -24,7 +24,7 @@ export default function Layout() {
     <div className="bg-[#0B0C10] text-[#FFFFFF] min-h-screen w-full overflow-x-hidden">
       <ScrollToTop />
 
-      <nav className="fixed top-0 w-full bg-[#0B0C10]/95 backdrop-blur-lg z-50 border-b border-[#1F2025]">
+      <nav className="fixed top-0 w-full bg-[#0B0C10]/95 backdrop-blur-lg z-50 border-b border-steel">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 py-5 flex items-center justify-between">
           <NavLink
             to="/"
@@ -56,7 +56,7 @@ export default function Layout() {
           <div className="flex items-center gap-4">
             <Link
               to="/contact"
-              className="hidden md:inline-flex items-center justify-center whitespace-nowrap bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95"
+              className="hidden md:inline-flex items-center justify-center whitespace-nowrap overflow-hidden bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95"
             >
               Get Started
             </Link>
@@ -75,7 +75,7 @@ export default function Layout() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#0B0C10]/95 backdrop-blur-lg border-b border-[#1F2025]">
+          <div className="md:hidden bg-[#0B0C10]/95 backdrop-blur-lg border-b border-steel">
             <div className="flex flex-col px-6 py-6 gap-5">
               <NavLink to="/" end onClick={closeMobile} className={mobileNavClass}>
                 Home
@@ -95,7 +95,7 @@ export default function Layout() {
               <Link
                 to="/contact"
                 onClick={closeMobile}
-                className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-3 rounded-full font-semibold text-center shadow-lg hover:bg-[#E55517] transition-all mt-2"
+                className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-3 rounded-full font-semibold text-center shadow-lg hover:bg-[#E55517] transition-all mt-2 whitespace-nowrap overflow-hidden"
               >
                 Get Started
               </Link>
@@ -108,11 +108,11 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer className="py-32 md:py-40 px-6 sm:px-10 lg:px-16 xl:px-24 bg-[#0B0C10] border-t border-[#1F2025]">
+      <footer className="py-12 px-6 sm:px-10 lg:px-16 xl:px-24 bg-[#0B0C10] border-t border-steel">
         <div className="w-full max-w-[1600px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-20 mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-10">
             <div className="sm:col-span-2 lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-8">
+              <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
                 <span className="text-2xl">✓</span>
                 <span>Win The Hour!™</span>
               </Link>
@@ -123,8 +123,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-8">Navigate</h4>
-              <ul className="space-y-5 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-4">Navigate</h4>
+              <ul className="space-y-3 text-[#FFFFFF]/60 text-sm">
                 <li>
                   <Link to="/" className="hover:text-[#FFFFFF] transition-colors">
                     Home
@@ -149,8 +149,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-8">Support</h4>
-              <ul className="space-y-5 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-4">Support</h4>
+              <ul className="space-y-3 text-[#FFFFFF]/60 text-sm">
                 <li>
                   <Link to="/contact" className="hover:text-[#FFFFFF] transition-colors">
                     Contact Us
@@ -170,8 +170,8 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-8">Legal</h4>
-              <ul className="space-y-5 text-[#FFFFFF]/60 text-sm">
+              <h4 className="font-bold mb-4">Legal</h4>
+              <ul className="space-y-3 text-[#FFFFFF]/60 text-sm">
                 <li>
                   <a href="#" className="hover:text-[#FFFFFF] transition-colors">
                     Privacy Policy
@@ -191,7 +191,7 @@ export default function Layout() {
             </div>
           </div>
 
-          <div className="border-t border-[#1F2025] pt-12 text-center text-[#FFFFFF]/50 text-sm">
+          <div className="border-t border-steel pt-8 text-center text-[#FFFFFF]/50 text-sm">
             <p>&copy; 2026 Win The Hour!™ All rights reserved.</p>
           </div>
         </div>

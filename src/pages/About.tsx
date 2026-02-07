@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
-const TESTIMONIAL_IMAGE = "/wth-hero-male.png";
+const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
 
 export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[100vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
-        <div className="w-full max-w-[1600px] mx-auto text-center py-40">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 leading-tight">
+      <section className="min-h-[90vh] flex items-center px-6 sm:px-10 lg:px-20 xl:px-32 bg-charcoal">
+        <div className="w-full max-w-[1600px] mx-auto text-center py-28">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             One Hour.{" "}
-            <span className="text-[#FF5E1A]">Fully Lived.</span>
+            <span className="text-orange">Fully Lived.</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl opacity-80 leading-relaxed max-w-3xl mx-auto">
             Win The Hour!™ was born from a simple belief: you don't need to
@@ -21,10 +21,10 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
-        <div className="w-full max-w-[1400px] mx-auto space-y-20 md:space-y-28">
-          <div className="bg-[#0B0C10] rounded-3xl p-12 md:p-16 lg:p-20 border-2 border-[#3C4F65]">
-            <h3 className="text-3xl sm:text-4xl font-bold text-[#FF5E1A] mb-8">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-slate">
+        <div className="w-full max-w-[1400px] mx-auto space-y-12 md:space-y-16">
+          <div className="bg-charcoal rounded-3xl p-10 md:p-14 lg:p-16 border-2 border-steel">
+            <h3 className="text-3xl sm:text-4xl font-bold text-orange mb-6">
               Our Mission
             </h3>
             <p className="text-lg lg:text-xl leading-relaxed opacity-90">
@@ -37,16 +37,16 @@ export default function About() {
             </p>
           </div>
 
-          <div className="bg-[#0B0C10] rounded-3xl p-12 md:p-16 lg:p-20 border-2 border-[#3C4F65]">
-            <h3 className="text-3xl sm:text-4xl font-bold text-[#FF5E1A] mb-8">
+          <div className="bg-charcoal rounded-3xl p-10 md:p-14 lg:p-16 border-2 border-steel">
+            <h3 className="text-3xl sm:text-4xl font-bold text-orange mb-6">
               The Philosophy
             </h3>
-            <p className="text-lg lg:text-xl leading-relaxed opacity-90 mb-8">
+            <p className="text-lg lg:text-xl leading-relaxed opacity-90 mb-6">
               Traditional productivity systems often create stress and guilt
               when we fall short of unrealistic daily goals. Win The Hour takes a
               different approach:
             </p>
-            <div className="space-y-5 ml-2">
+            <div className="space-y-4 ml-2">
               <div className="flex items-start gap-4">
                 <span className="text-[#FF5E1A] text-xl font-bold mt-0.5">
                   ✓
@@ -79,29 +79,29 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10]">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-charcoal">
         <div className="w-full max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14">
-            <div className="bg-[#1F2025] rounded-3xl p-12 lg:p-14 border-2 border-[#3C4F65] text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#FF5E1A] mb-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="bg-slate rounded-3xl p-8 lg:p-10 border-2 border-steel text-center">
+              <div className="text-4xl md:text-5xl font-bold text-orange mb-3">
                 24
               </div>
               <p className="text-sm opacity-70">Opportunities every day</p>
             </div>
-            <div className="bg-[#1F2025] rounded-3xl p-12 lg:p-14 border-2 border-[#3C4F65] text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#FF5E1A] mb-4">
+            <div className="bg-slate rounded-3xl p-8 lg:p-10 border-2 border-steel text-center">
+              <div className="text-4xl md:text-5xl font-bold text-orange mb-3">
                 60
               </div>
               <p className="text-sm opacity-70">Minutes to make count</p>
             </div>
-            <div className="bg-[#1F2025] rounded-3xl p-12 lg:p-14 border-2 border-[#3C4F65] text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#FF5E1A] mb-4">
+            <div className="bg-slate rounded-3xl p-8 lg:p-10 border-2 border-steel text-center">
+              <div className="text-4xl md:text-5xl font-bold text-orange mb-3">
                 1
               </div>
               <p className="text-sm opacity-70">Hour at a time</p>
             </div>
-            <div className="bg-[#1F2025] rounded-3xl p-12 lg:p-14 border-2 border-[#3C4F65] text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#FF5E1A] mb-4">
+            <div className="bg-slate rounded-3xl p-8 lg:p-10 border-2 border-steel text-center">
+              <div className="text-4xl md:text-5xl font-bold text-orange mb-3">
                 ∞
               </div>
               <p className="text-sm opacity-70">Potential unlocked</p>
@@ -111,15 +111,20 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#1F2025]">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-slate">
         <div className="w-full max-w-[1600px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-28 md:mb-36 text-center">
-            What We <span className="text-[#FF5E1A]">Stand For</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 md:mb-20 text-center">
+            What We <span className="text-orange">Stand For</span>
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
-            <div className="bg-[#0B0C10] rounded-2xl p-12 lg:p-16 border-2 border-[#3C4F65]">
-              <div className="text-4xl mb-10">🎯</div>
-              <h3 className="text-xl font-bold mb-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            <div className="bg-charcoal rounded-2xl p-10 lg:p-12 border-2 border-steel">
+              <div className="w-12 h-12 border-2 border-orange rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-[#FF5E1A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4">
                 Progress Over Perfection
               </h3>
               <p className="opacity-70 leading-relaxed">
@@ -127,17 +132,27 @@ export default function About() {
                 intentional. Done beats flawless every time.
               </p>
             </div>
-            <div className="bg-[#0B0C10] rounded-2xl p-12 lg:p-16 border-2 border-[#3C4F65]">
-              <div className="text-4xl mb-10">🔄</div>
-              <h3 className="text-xl font-bold mb-6">Guilt-Free Resets</h3>
+            <div className="bg-charcoal rounded-2xl p-10 lg:p-12 border-2 border-steel">
+              <div className="w-12 h-12 border-2 border-orange rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-[#FF5E1A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Guilt-Free Resets</h3>
               <p className="opacity-70 leading-relaxed">
                 Lost an hour? The next one starts fresh. No shame spirals. No
                 "I'll start Monday." Start now.
               </p>
             </div>
-            <div className="bg-[#0B0C10] rounded-2xl p-12 lg:p-16 border-2 border-[#3C4F65] sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
-              <div className="text-4xl mb-10">💪</div>
-              <h3 className="text-xl font-bold mb-6">
+            <div className="bg-charcoal rounded-2xl p-10 lg:p-12 border-2 border-steel sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
+              <div className="w-12 h-12 border-2 border-orange rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-[#FF5E1A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4">
                 Radical Accountability
               </h3>
               <p className="opacity-70 leading-relaxed">
@@ -150,13 +165,13 @@ export default function About() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-gradient-to-br from-[#3C4F65] via-[#1F2025] to-[#0B0C10]">
-        <div className="w-full max-w-[1600px] mx-auto grid md:grid-cols-2 gap-20 lg:gap-32 items-center">
-          <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-12 sm:p-16 md:p-20 lg:p-24 border border-[#3C4F65]">
-            <div className="text-6xl lg:text-7xl text-[#FF5E1A] mb-10 leading-none">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-gradient-to-br from-[#3C4F65] via-[#1F2025] to-[#0B0C10]">
+        <div className="w-full max-w-[1600px] mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-10 sm:p-14 md:p-16 border-2 border-steel">
+            <div className="text-5xl lg:text-6xl text-orange mb-8 leading-none">
               "
             </div>
-            <p className="text-lg lg:text-xl leading-relaxed mb-12">
+            <p className="text-lg lg:text-xl leading-relaxed mb-10">
               Either get this app or be a loser! I used to wonder what I did
               with my days, or, even worse, on productive days still feel I
               wasn't doing enough! Now, my stats don't lie! I love the feeling
@@ -169,26 +184,26 @@ export default function About() {
             <img
               src={TESTIMONIAL_IMAGE}
               alt="Professional Success with Win The Hour"
-              className="w-full h-auto rounded-3xl shadow-2xl border border-[#3C4F65]"
+              className="w-full h-auto rounded-3xl shadow-2xl border-2 border-steel"
             />
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-40 md:py-52 lg:py-64 px-6 sm:px-10 lg:px-20 xl:px-32 bg-[#0B0C10] text-center">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-20 xl:px-32 bg-charcoal text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-10">
             Ready to join the movement?
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-14 md:mb-20 opacity-80 leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl mb-10 md:mb-14 opacity-80 leading-relaxed">
             Your next winning hour starts now.
           </p>
           <Link
             to="/contact"
-            className="bg-[#FF5E1A] text-[#FFFFFF] px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap"
+            className="bg-orange text-[#FFFFFF] px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
           >
-            Get Started
+            Join The Movement
           </Link>
         </div>
       </section>

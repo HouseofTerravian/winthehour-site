@@ -104,3 +104,12 @@ body {
 .feature-icon {
   transition: transform 0.3s ease;
 }
+
+/* Semantic color classes */
+.bg-charcoal { background-color: #0B0C10; }
+.bg-slate { background-color: #1F2025; }
+.bg-steel { background-color: #3C4F65; }
+.text-orange { color: #FF5E1A; }
+.bg-orange { background-color: #FF5E1A; }
+.border-steel { border-color: #3C4F65; }
+.border-orange { border-color: #FF5E1A; }
