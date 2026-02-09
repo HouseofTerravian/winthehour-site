@@ -6,6 +6,7 @@ import Manifesto from './pages/Manifesto'
 import Membership from './pages/Membership'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
+import Store from './pages/Store'
 import CampusLanding from './pages/CampusLanding'
 import RemoteLanding from './pages/RemoteLanding'
 import FoundersLanding from './pages/FoundersLanding'
@@ -22,6 +23,7 @@ function App() {
           <Route path="/membership" element={<Membership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/store" element={<Store />} />
         </Route>
         <Route path="/campus" element={<CampusLanding />} />
         <Route path="/remote" element={<RemoteLanding />} />
