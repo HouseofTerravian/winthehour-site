@@ -8,6 +8,9 @@
   --color-molten-light: #FF7A3D;
   --color-molten-dark: #E54D0F;
   --color-gold: #FFB300;
+  --color-tier-starter: #4CAF50;
+  --color-tier-sovereign: #2196F3;
+  --color-tier-legendary: #9C27B0;
   --color-contrast-red: #D62828;
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
 }

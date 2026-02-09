@@ -192,12 +192,12 @@ export default function Features() {
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { title: "Analytics Dashboard", desc: "Track hours won, XP earned, tier progress, and mission completion rates with visual clarity.", icon: "M3 3v18h18M9 17V9m4 8V5m4 12v-4" },
-              { title: "Mission Archive", desc: "Complete daily, weekly, and seasonal missions. Export your history. Prove your discipline.", icon: "M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" },
-              { title: "Silent Mode", desc: "Focus without interruption. Notifications pause. Your streak stays protected.", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
-              { title: "Data Sovereignty", desc: "Export everything. Own your reflections. Encrypted storage. No surveillance.", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
-              { title: "Tier System", desc: "Unlock Sovereign, Elite, and Legendary tiers. Access exclusive modules and voice packs.", icon: "M6 9H4.5a2.5 2.5 0 0 1 0-5C5.71 4 7 5.71 7 7v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7c0-1.29 1.29-3 2.5-3a2.5 2.5 0 0 1 0 5H18" },
-              { title: "Affiliate Program", desc: "Earn 30% recurring commissions. Campus, remote, and founder variants available.", icon: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M8.5 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM20 8v6M23 11h-6" },
+              { title: "Analytics Dashboard", desc: "Track hours won, XP earned, tier progress, and mission completion rates with visual clarity.", tagline: "No opinions. Just data.", icon: "M3 3v18h18M9 17V9m4 8V5m4 12v-4" },
+              { title: "Mission Archive", desc: "Complete daily, weekly, and seasonal missions. Export your history. Prove your discipline.", tagline: "Discipline leaves receipts.", icon: "M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" },
+              { title: "Silent Mode", desc: "Focus without interruption. Notifications pause. Your streak stays protected.", tagline: "This is about control — not overload.", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
+              { title: "Data Sovereignty", desc: "Export everything. Own your reflections. Encrypted storage. No surveillance.", tagline: "Your data. Your rules.", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
+              { title: "Tier System", desc: "Unlock Sovereign, Elite, and Legendary tiers. Access exclusive modules and voice packs.", tagline: "You don't buy status. You earn it.", icon: "M6 9H4.5a2.5 2.5 0 0 1 0-5C5.71 4 7 5.71 7 7v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7c0-1.29 1.29-3 2.5-3a2.5 2.5 0 0 1 0 5H18" },
+              { title: "Affiliate Program", desc: "Earn 30% recurring commissions. Campus, remote, and founder variants available.", tagline: "Available at every tier.", icon: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M8.5 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM20 8v6M23 11h-6" },
             ].map((feature) => (
               <div key={feature.title} className="bg-slate rounded-2xl p-10 border-2 border-steel">
                 <div className="w-12 h-12 mb-6 border-2 border-molten rounded-full flex items-center justify-center">
@@ -206,7 +206,8 @@ export default function Features() {
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold mb-4">{feature.title}</h4>
-                <p className="text-white/80 leading-relaxed">{feature.desc}</p>
+                <p className="text-white/80 leading-relaxed mb-4">{feature.desc}</p>
+                <p className="text-molten italic text-sm">{feature.tagline}</p>
               </div>
             ))}
           </div>

@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 const tiers = [
   {
     name: "Starter",
+    subtitle: "Freshman Mode",
+    tagline: "Learn the system. Build the habit.",
     icon: (
-      <svg className="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-8 h-8 text-tier-starter" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3.5 2" />
       </svg>
     ),
@@ -14,36 +16,44 @@ const tiers = [
       { text: "7-day streak tracking", included: true },
       { text: "Basic hourly check-ins", included: true },
       { text: "Morning + Evening Flow", included: true },
+      { text: "Access to Deals Locker", included: true },
       { text: "Reflection journal locked", included: false },
     ],
-    cta: "Start Free",
+    cta: "Start Training",
     highlighted: false,
-    borderColor: "border-steel",
-    btnClass: "bg-steel text-white hover:bg-steel/80",
+    borderColor: "border-tier-starter",
+    checkColor: "text-tier-starter",
+    btnClass: "bg-tier-starter text-white hover:opacity-90",
   },
   {
     name: "Sovereign",
+    subtitle: "Solo Starter Pack",
+    tagline: "More control. More preparation.",
     icon: (
-      <svg className="w-8 h-8 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-8 h-8 text-tier-sovereign" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 4l3 12h14l3-12-5.5 6L12 2l-4.5 8L2 4z" /><path d="M5 16h14v4H5z" />
       </svg>
     ),
     price: "$12",
     period: "/mo",
     features: [
-      { text: "Unlimited streak tracking", included: true },
-      { text: "Full analytics dashboard", included: true },
-      { text: "Mission archive + export", included: true },
+      { text: "Full 24-hour planning", included: true },
+      { text: "Plan the next day", included: true },
+      { text: "No ads", included: true },
+      { text: "AI summaries + suggestions", included: true },
       { text: "Encrypted reflection journal", included: true },
       { text: "1x free streak recovery/mo", included: true },
     ],
     cta: "Go Sovereign",
     highlighted: true,
-    borderColor: "border-molten",
-    btnClass: "bg-molten text-white hover:opacity-90",
+    borderColor: "border-tier-sovereign",
+    checkColor: "text-tier-sovereign",
+    btnClass: "bg-tier-sovereign text-white hover:opacity-90",
   },
   {
     name: "Elite",
+    subtitle: "Group Game Ready",
+    tagline: "Structure plus accountability.",
     icon: (
       <svg className="w-8 h-8 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -53,14 +63,16 @@ const tiers = [
     period: "/mo",
     features: [
       { text: "Everything in Sovereign", included: true },
-      { text: "AI co-pilot suggestions", included: true },
+      { text: "Join accountability groups", included: true },
+      { text: "Advanced AI insights", included: true },
       { text: "Premium voice packs", included: true },
-      { text: "Priority support", included: true },
-      { text: "Early feature access", included: true },
+      { text: "30% OFF voice packs", included: true },
+      { text: "Monthly summaries", included: true },
     ],
     cta: "Go Elite",
     highlighted: false,
     borderColor: "border-gold",
+    checkColor: "text-gold",
     btnClass: "bg-gold text-charcoal hover:opacity-90",
   },
 ];
@@ -109,7 +121,7 @@ export default function Membership() {
                 }`}
               >
                 {tier.highlighted && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-molten text-white px-6 py-1 rounded-full text-sm font-bold whitespace-nowrap">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-tier-sovereign text-white px-6 py-1 rounded-full text-sm font-bold whitespace-nowrap">
                     MOST POPULAR
                   </div>
                 )}
@@ -119,6 +131,7 @@ export default function Membership() {
                     {tier.icon}
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                  <p className="text-sm text-white/70 uppercase tracking-wide mb-4">{tier.subtitle}</p>
                   <div className="text-4xl font-bold mb-2">
                     {tier.price}
                     {tier.period !== "Forever free" && (
@@ -130,6 +143,10 @@ export default function Membership() {
                   </p>
                 </div>
 
+                <div className="bg-charcoal rounded-2xl p-5 mb-6">
+                  <p className="text-white text-center italic opacity-80">"{tier.tagline}"</p>
+                </div>
+
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature) => (
                     <li
@@ -139,13 +156,9 @@ export default function Membership() {
                       }`}
                     >
                       <span
-                        className={
-                          feature.included
-                            ? tier.name === "Elite"
-                              ? "text-gold"
-                              : "text-molten"
-                            : ""
-                        }
+                        className={`font-bold ${
+                          feature.included ? tier.checkColor : ""
+                        }`}
                       >
                         {feature.included ? "✓" : "✗"}
                       </span>
@@ -162,6 +175,76 @@ export default function Membership() {
                 </Link>
               </div>
             ))}
+          </div>
+
+          {/* Earned Tiers */}
+          <div className="mt-16 bg-linear-to-br from-molten/20 to-tier-legendary/20 rounded-3xl p-12 border-2 border-molten">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">Earned Tiers</h2>
+              <p className="text-xl text-white/80">You don't buy these. You unlock them through proven consistency.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Elite+ */}
+              <div className="bg-charcoal/80 rounded-2xl p-8 border-2 border-molten">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 border-2 border-molten rounded-full flex items-center justify-center">
+                    <svg className="w-7 h-7 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Elite+</h3>
+                    <p className="text-sm text-molten uppercase tracking-wide">Captain Status</p>
+                  </div>
+                </div>
+                <p className="text-white/80 mb-6 italic">"You don't buy this. You earn it."</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-molten font-bold">✓</span>
+                    <span>Host accountability groups</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-molten font-bold">✓</span>
+                    <span>Group stats + leader tools</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-molten font-bold">✓</span>
+                    <span>Featured in search</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Legendary */}
+              <div className="bg-charcoal/80 rounded-2xl p-8 border-2 border-tier-legendary">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 border-2 border-tier-legendary rounded-full flex items-center justify-center">
+                    <svg className="w-7 h-7 text-tier-legendary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C5.71 4 7 5.71 7 7v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7c0-1.29 1.29-3 2.5-3a2.5 2.5 0 0 1 0 5H18" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Legendary</h3>
+                    <p className="text-sm text-tier-legendary uppercase tracking-wide">Legacy Tier</p>
+                  </div>
+                </div>
+                <p className="text-white/80 mb-6 italic">"For users who don't just finish the workout — they define the program."</p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="text-tier-legendary font-bold">✓</span>
+                    <span>Early access to features</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-tier-legendary font-bold">✓</span>
+                    <span>Extended insight reports</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-tier-legendary font-bold">✓</span>
+                    <span>Legacy builder recognition</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-16">
