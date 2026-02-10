@@ -263,7 +263,7 @@ export default function Store() {
               <p className="text-white/60">Digital watchfaces for Apple Watch and compatible devices</p>
             </div>
             <svg
-              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${watchfacesOpen ? "rotate-180" : ""}`}
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${watchfacesOpen ? "" : "-rotate-90"}`}
               viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             >
               <polyline points="6 9 12 15 18 9" />
@@ -297,7 +297,7 @@ export default function Store() {
               <p className="text-white/60">Wear the movement. Premium quality, limited runs.</p>
             </div>
             <svg
-              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${merchOpen ? "rotate-180" : ""}`}
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${merchOpen ? "" : "-rotate-90"}`}
               viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             >
               <polyline points="6 9 12 15 18 9" />
@@ -345,7 +345,7 @@ export default function Store() {
               <p className="text-white/60">Statement pieces for your office, studio, or training space</p>
             </div>
             <svg
-              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${postersOpen ? "rotate-180" : ""}`}
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${postersOpen ? "" : "-rotate-90"}`}
               viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             >
               <polyline points="6 9 12 15 18 9" />
