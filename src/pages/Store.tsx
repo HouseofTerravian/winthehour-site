@@ -157,6 +157,58 @@ const posters: Product[] = [
   },
 ];
 
+function groupByEdition(products: Product[]) {
+  const groups: { edition: string; editionColor: string; products: Product[] }[] = [];
+  for (const product of products) {
+    const existing = groups.find((g) => g.edition === product.edition);
+    if (existing) {
+      existing.products.push(product);
+    } else {
+      groups.push({ edition: product.edition, editionColor: product.editionColor, products: [product] });
+    }
+  }
+  return groups;
+}
+
+function ProductSubGroup({ edition, editionColor, products, columns = 4 }: {
+  edition: string;
+  editionColor: string;
+  products: Product[];
+  columns?: number;
+}) {
+  const [open, setOpen] = useState(true);
+  const gridCols = columns === 4
+    ? "sm:grid-cols-2 lg:grid-cols-4"
+    : "sm:grid-cols-2 lg:grid-cols-3";
+
+  return (
+    <div className="mb-8 last:mb-0">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-3 mb-4 cursor-pointer"
+      >
+        <span className={`text-sm font-bold px-3 py-1 rounded-full border ${editionColor}`}>
+          {edition}
+        </span>
+        <span className="text-white/40 text-sm">{products.length} {products.length === 1 ? "item" : "items"}</span>
+        <svg
+          className={`w-4 h-4 text-white/40 transition-transform duration-300 ${open ? "" : "-rotate-90"}`}
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      {open && (
+        <div className={`grid ${gridCols} gap-8`}>
+          {products.map((product) => (
+            <ProductCard key={product.name} product={product} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ProductCard({ product }: { product: Product }) {
   const content = (
     <>
@@ -271,9 +323,15 @@ export default function Store() {
           </button>
 
           {watchfacesOpen && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {watchfaces.map((product) => (
-                <ProductCard key={product.name} product={product} />
+            <div>
+              {groupByEdition(watchfaces).map((group) => (
+                <ProductSubGroup
+                  key={group.edition}
+                  edition={group.edition}
+                  editionColor={group.editionColor}
+                  products={group.products}
+                  columns={4}
+                />
               ))}
             </div>
           )}
@@ -305,21 +363,29 @@ export default function Store() {
           </button>
 
           {merchOpen && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {merch.map((product) => (
-                <ProductCard key={product.name} product={product} />
+            <div>
+              {groupByEdition(merch).map((group) => (
+                <ProductSubGroup
+                  key={group.edition}
+                  edition={group.edition}
+                  editionColor={group.editionColor}
+                  products={group.products}
+                  columns={3}
+                />
               ))}
 
               {/* Placeholder card for future merch */}
-              <div className="bg-slate rounded-3xl border-2 border-steel border-dashed flex flex-col items-center justify-center p-12 text-center">
-                <div className="w-16 h-16 mb-6 border-2 border-steel rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
+              <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-slate rounded-3xl border-2 border-steel border-dashed flex flex-col items-center justify-center p-12 text-center">
+                  <div className="w-16 h-16 mb-6 border-2 border-steel rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-white/50">More Coming</h3>
+                  <p className="text-white/40 text-sm">T-shirts, mugs, journals, and more dropping soon.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white/50">More Coming</h3>
-                <p className="text-white/40 text-sm">T-shirts, mugs, journals, and more dropping soon.</p>
               </div>
             </div>
           )}
@@ -353,9 +419,15 @@ export default function Store() {
           </button>
 
           {postersOpen && (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posters.map((product) => (
-                <ProductCard key={product.name} product={product} />
+            <div>
+              {groupByEdition(posters).map((group) => (
+                <ProductSubGroup
+                  key={group.edition}
+                  edition={group.edition}
+                  editionColor={group.editionColor}
+                  products={group.products}
+                  columns={3}
+                />
               ))}
             </div>
           )}
