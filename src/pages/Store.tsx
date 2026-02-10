@@ -7,6 +7,7 @@ type Product = {
   editionColor: string;
   price: string;
   status: "available" | "coming-soon";
+  link?: string;
 };
 
 const watchfaces: Product[] = [
@@ -17,6 +18,7 @@ const watchfaces: Product[] = [
     editionColor: "bg-molten/20 text-molten border-molten",
     price: "$4.99",
     status: "available",
+    link: "https://payhip.com/b/MXKgG",
   },
   {
     name: "Athletic Smartwatch",
@@ -123,8 +125,8 @@ const posters: Product[] = [
 ];
 
 function ProductCard({ product }: { product: Product }) {
-  return (
-    <div className="bg-slate rounded-3xl border-2 border-steel hover:border-molten transition-all duration-300 overflow-hidden group">
+  const content = (
+    <>
       <div className="aspect-square overflow-hidden bg-charcoal">
         <img
           src={product.image}
@@ -149,23 +151,41 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-molten">{product.price}</span>
           {product.status === "available" ? (
-            <Link
-              to="/contact"
-              className="bg-molten text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-molten-dark transition-all whitespace-nowrap"
-            >
+            <span className="bg-molten text-white px-5 py-2 rounded-full font-semibold text-sm group-hover:bg-molten-dark transition-all whitespace-nowrap">
               Buy Now
-            </Link>
+            </span>
           ) : (
-            <Link
-              to="/contact"
-              className="bg-steel text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-steel/80 transition-all whitespace-nowrap"
-            >
+            <span className="bg-steel text-white px-5 py-2 rounded-full font-semibold text-sm group-hover:bg-steel/80 transition-all whitespace-nowrap">
               Notify Me
-            </Link>
+            </span>
           )}
         </div>
       </div>
-    </div>
+    </>
+  );
+
+  const cardClasses = "bg-slate rounded-3xl border-2 border-steel hover:border-molten transition-all duration-300 overflow-hidden group cursor-pointer";
+
+  if (product.link) {
+    return (
+      <a href={product.link} target="_blank" rel="noopener noreferrer" className={cardClasses}>
+        {content}
+      </a>
+    );
+  }
+
+  if (product.status === "coming-soon") {
+    return (
+      <Link to="/contact" className={cardClasses}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <Link to="/contact" className={cardClasses}>
+      {content}
+    </Link>
   );
 }
 
