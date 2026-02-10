@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type Product = {
@@ -222,6 +223,10 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function Store() {
+  const [watchfacesOpen, setWatchfacesOpen] = useState(true);
+  const [merchOpen, setMerchOpen] = useState(true);
+  const [postersOpen, setPostersOpen] = useState(true);
+
   return (
     <>
       {/* Hero */}
@@ -243,84 +248,117 @@ export default function Store() {
       {/* Watchface Collections */}
       <section className="py-20 px-6 bg-slate">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center">
+          <button
+            onClick={() => setWatchfacesOpen(!watchfacesOpen)}
+            className="flex items-center gap-4 mb-12 w-full text-left cursor-pointer"
+          >
+            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="text-3xl sm:text-4xl font-bold">Watchface Collections</h2>
               <p className="text-white/60">Digital watchfaces for Apple Watch and compatible devices</p>
             </div>
-          </div>
+            <svg
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${watchfacesOpen ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {watchfaces.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
-          </div>
+          {watchfacesOpen && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {watchfaces.map((product) => (
+                <ProductCard key={product.name} product={product} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Merch & Apparel */}
       <section className="py-20 px-6 bg-charcoal">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center">
+          <button
+            onClick={() => setMerchOpen(!merchOpen)}
+            className="flex items-center gap-4 mb-12 w-full text-left cursor-pointer"
+          >
+            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
               </svg>
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="text-3xl sm:text-4xl font-bold">Merch & Apparel</h2>
               <p className="text-white/60">Wear the movement. Premium quality, limited runs.</p>
             </div>
-          </div>
+            <svg
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${merchOpen ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {merch.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
+          {merchOpen && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {merch.map((product) => (
+                <ProductCard key={product.name} product={product} />
+              ))}
 
-            {/* Placeholder card for future merch */}
-            <div className="bg-slate rounded-3xl border-2 border-steel border-dashed flex flex-col items-center justify-center p-12 text-center">
-              <div className="w-16 h-16 mb-6 border-2 border-steel rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
+              {/* Placeholder card for future merch */}
+              <div className="bg-slate rounded-3xl border-2 border-steel border-dashed flex flex-col items-center justify-center p-12 text-center">
+                <div className="w-16 h-16 mb-6 border-2 border-steel rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-white/50">More Coming</h3>
+                <p className="text-white/40 text-sm">T-shirts, mugs, journals, and more dropping soon.</p>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-white/50">More Coming</h3>
-              <p className="text-white/40 text-sm">T-shirts, mugs, journals, and more dropping soon.</p>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
       {/* Posters & Prints */}
       <section className="py-20 px-6 bg-slate">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center">
+          <button
+            onClick={() => setPostersOpen(!postersOpen)}
+            className="flex items-center gap-4 mb-12 w-full text-left cursor-pointer"
+          >
+            <div className="w-12 h-12 border-2 border-molten rounded-full flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-molten" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
             </div>
-            <div>
+            <div className="flex-1">
               <h2 className="text-3xl sm:text-4xl font-bold">Posters & Prints</h2>
               <p className="text-white/60">Statement pieces for your office, studio, or training space</p>
             </div>
-          </div>
+            <svg
+              className={`w-6 h-6 text-white/60 shrink-0 transition-transform duration-300 ${postersOpen ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posters.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
-          </div>
+          {postersOpen && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posters.map((product) => (
+                <ProductCard key={product.name} product={product} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
