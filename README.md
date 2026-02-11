@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# ✅ Win The Hour!™
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Win The Hour!™ is a lifestyle expression brand forged at the intersection of execution, apparel, and sovereignty.
 
-Currently, two official plugins are available:
+This repo powers the **WTH! App**, Checkmark Seals, Dispatches, and the broader ecosystem built by SlateRiver LLC (NM), pending trust assignment to the Toravian Dynasty Trust.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧠 What Is WTH!?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Win The Hour!™ isn't a productivity method — it's a **momentum ritual**.
+Our ethos is simple: **Make Yourself Better Every Day™ (M.Y.B.E.D.)**.
 
-## Expanding the ESLint configuration
+The WTH! experience combines:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Crownstrike Checkmark Rituals
+- 👕 Time-Sovereignty Apparel Drops
+- 📜 Mythic Dispatches (see /dispatches)
+- 📱 Lock Screens + Watchfaces
+- 🎯 University Poster Campaigns
+- 🔒 Vaulted Proof-of-Commerce
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🗂️ Dispatches from the Checkmark
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+WTH! Dispatches are sovereign brand transmissions — poetic, declarative, and timestamped.
+They are not coaching articles or instructional blogs.
+They exist to signal, not to teach.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+➡️ Visit /dispatches to view the latest releases.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Each Dispatch is:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🔒 Protected by U.S. Copyright
+- 🧬 Authored by Chude Muonelo
+- 🛡️ Legally registered under SlateRiver LLC
+- 🔭 Aligned with Vault #4 and the Lotus Engine
+
+---
+
+## 🔖 Legal
+
+Win The Hour!™, M.Y.B.E.D.™, and all associated marks are pending trademarks.
+This repository is owned and maintained by SlateRiver LLC (NM).
+Trust assignment to the Toravian Dynasty Trust is in progress.
+
+All contributions and assets are timestamped and filed for digital sovereignty and IP defense.
+
+---
+
+© 2026 Chude Muonelo. All Rights Reserved.
