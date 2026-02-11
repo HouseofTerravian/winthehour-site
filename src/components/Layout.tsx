@@ -45,11 +45,11 @@ export default function Layout() {
             <NavLink to="/membership" className={navClass}>
               Membership
             </NavLink>
-            <NavLink to="/manifesto" className={navClass}>
-              Manifesto
-            </NavLink>
             <NavLink to="/store" className={navClass}>
               Store
+            </NavLink>
+            <NavLink to="/manifesto" className={navClass}>
+              Manifesto
             </NavLink>
             <NavLink to="/blog" className={navClass}>
               Blog
@@ -92,11 +92,11 @@ export default function Layout() {
               <NavLink to="/membership" onClick={closeMobile} className={mobileNavClass}>
                 Membership
               </NavLink>
-              <NavLink to="/manifesto" onClick={closeMobile} className={mobileNavClass}>
-                Manifesto
-              </NavLink>
               <NavLink to="/store" onClick={closeMobile} className={mobileNavClass}>
                 Store
+              </NavLink>
+              <NavLink to="/manifesto" onClick={closeMobile} className={mobileNavClass}>
+                Manifesto
               </NavLink>
               <NavLink to="/blog" onClick={closeMobile} className={mobileNavClass}>
                 Blog
