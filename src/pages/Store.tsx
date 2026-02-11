@@ -42,7 +42,7 @@ const watchfaces: Product[] = [
     image: "/store/watchfaces/sleek-athletic-edition.png",
     edition: "Athletic",
     editionColor: "bg-molten/20 text-molten border-molten",
-    price: "$4.99",
+    price: "$5.99",
     status: "available",
   },
   {
@@ -50,7 +50,7 @@ const watchfaces: Product[] = [
     image: "/store/watchfaces/classic-athletic-edition.png",
     edition: "Athletic",
     editionColor: "bg-molten/20 text-molten border-molten",
-    price: "$4.99",
+    price: "$5.99",
     status: "available",
   },
   {
@@ -82,7 +82,7 @@ const watchfaces: Product[] = [
     image: "/store/watchfaces/elite-edition.png",
     edition: "Elite",
     editionColor: "bg-gold/20 text-gold border-gold",
-    price: "$7.99",
+    price: "$8.99",
     status: "available",
   },
   {
@@ -114,7 +114,7 @@ const watchfaces: Product[] = [
     image: "/store/watchfaces/chakra-watch-design.png",
     edition: "Chakra",
     editionColor: "bg-tier-legendary/20 text-tier-legendary border-tier-legendary",
-    price: "$7.99",
+    price: "$8.99",
     status: "available",
   },
   {
@@ -122,7 +122,7 @@ const watchfaces: Product[] = [
     image: "/store/watchfaces/chakra-golden-mandala.png",
     edition: "Chakra",
     editionColor: "bg-tier-legendary/20 text-tier-legendary border-tier-legendary",
-    price: "$7.99",
+    price: "$9.99",
     status: "available",
   },
   {
