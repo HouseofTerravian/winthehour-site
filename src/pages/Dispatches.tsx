@@ -54,7 +54,7 @@ const tagColors: Record<string, string> = {
   Framework: "bg-molten/20 text-molten border-molten",
 };
 
-export default function Blog() {
+export default function Dispatches() {
   return (
     <>
       {/* Hero */}
@@ -62,10 +62,10 @@ export default function Blog() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-              The <span className="text-molten">Blog</span>
+              The <span className="text-molten">Dispatches</span>
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              Insights on productivity, discipline, and winning your hours
+              Crownstrike Communications from the sovereign brand
             </p>
           </div>
 
@@ -98,10 +98,10 @@ export default function Blog() {
           <div className="text-center mt-20">
             <div className="bg-slate rounded-3xl p-12 border-2 border-molten">
               <h2 className="text-3xl font-bold mb-4">
-                Blog launching soon
+                Dispatches launching soon
               </h2>
               <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                We're preparing deep dives on productivity science, streak psychology, and the Win The Hour!™ methodology. Stay tuned.
+                Sovereign transmissions on time, streaks, and the Win The Hour!&trade; doctrine are incoming. Stay tuned.
               </p>
               <Link
                 to="/contact"
