@@ -6,6 +6,7 @@ import Manifesto from './pages/Manifesto'
 import Membership from './pages/Membership'
 import Contact from './pages/Contact'
 import Dispatches from './pages/Dispatches'
+import DispatchView from './pages/DispatchView'
 import Store from './pages/Store'
 import CampusLanding from './pages/CampusLanding'
 import RemoteLanding from './pages/RemoteLanding'
@@ -23,6 +24,7 @@ function App() {
           <Route path="/membership" element={<Membership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dispatches" element={<Dispatches />} />
+          <Route path="/dispatches/:id" element={<DispatchView />} />
           <Route path="/store" element={<Store />} />
         </Route>
         <Route path="/campus" element={<CampusLanding />} />
