@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import InstallButton from "../components/InstallButton";
 
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
 const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
@@ -35,12 +36,18 @@ export default function Home() {
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
               Join high-performers building streaks, completing missions, and mastering their days through disciplined momentum.
             </p>
-            <Link
-              to="/membership"
-              className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden glow-pulse"
-            >
-              Start Free
-            </Link>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Link
+                to="/membership"
+                className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden glow-pulse"
+              >
+                Start Free
+              </Link>
+              <InstallButton
+                label="Install App"
+                className="border-2 border-molten text-molten px-8 py-4 rounded-full font-bold text-lg hover:bg-molten hover:text-white transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+              />
+            </div>
           </div>
 
           <div ref={heroImageRef} className="relative opacity-0 delay-200">
@@ -140,12 +147,18 @@ export default function Home() {
           <p className="text-xl text-white/80 mb-12 leading-relaxed">
             Win The Hour!™ is more than a planner. It's a ritual-based execution engine designed to help you become who you're meant to be — one hour at a time.
           </p>
-          <Link
-            to="/membership"
-            className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
-          >
-            Join The Movement
-          </Link>
+          <div className="flex flex-wrap gap-4 justify-center items-center">
+            <Link
+              to="/membership"
+              className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+            >
+              Join The Movement
+            </Link>
+            <InstallButton
+              label="Install App"
+              className="border-2 border-molten text-molten px-8 py-4 rounded-full font-bold text-lg hover:bg-molten hover:text-white transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
+            />
+          </div>
         </div>
       </section>
     </>
