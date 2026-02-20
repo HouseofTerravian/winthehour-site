@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import InstallButton from "../components/InstallButton";
+import { APP_URL } from "../config";
 
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
 const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
@@ -43,10 +43,14 @@ export default function Home() {
               >
                 Start Free
               </Link>
-              <InstallButton
-                label="Install App"
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-molten text-molten px-8 py-4 rounded-full font-bold text-lg hover:bg-molten hover:text-white transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
-              />
+              >
+                Get the App
+              </a>
             </div>
           </div>
 
@@ -154,10 +158,14 @@ export default function Home() {
             >
               Join The Movement
             </Link>
-            <InstallButton
-              label="Install App"
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-2 border-molten text-molten px-8 py-4 rounded-full font-bold text-lg hover:bg-molten hover:text-white transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
-            />
+            >
+              Get the App
+            </a>
           </div>
         </div>
       </section>
