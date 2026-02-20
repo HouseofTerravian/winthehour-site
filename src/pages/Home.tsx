@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { APP_URL } from "../config";
+import { APP_URL, STRIPE_PAYMENT_LINK } from "../config";
 
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
 const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
@@ -139,6 +139,63 @@ export default function Home() {
               className="w-full h-auto rounded-3xl shadow-2xl border-2 border-steel"
             />
           </div>
+        </div>
+      </section>
+
+      {/* $1 Get the App */}
+      <section className="py-28 px-6 bg-linear-to-b from-charcoal to-slate">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block mb-6 px-4 py-2 bg-gold/20 border border-gold rounded-full text-gold text-sm font-semibold tracking-widest">
+            EARLY ACCESS
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            One Dollar.<br />
+            <span className="text-molten">Unlimited Hours.</span>
+          </h2>
+          <p className="text-xl text-white/65 mb-16 max-w-xl mx-auto leading-relaxed">
+            This isn't a subscription. It's your first commitment. Pay $1 once — get full access to the app, forever.
+          </p>
+
+          {/* Pricing Card */}
+          <div className="relative bg-slate rounded-3xl p-10 border-2 border-molten max-w-sm mx-auto mb-8 overflow-hidden shadow-2xl shadow-molten/10">
+            <div className="absolute inset-0 bg-molten/5 pointer-events-none rounded-3xl" />
+            <div className="relative">
+              <div className="text-7xl font-bold text-molten leading-none mb-1">$1</div>
+              <div className="text-white/40 text-xs tracking-widest uppercase mb-10">One-time · No subscription · Lifetime access</div>
+
+              <ul className="text-left space-y-3 mb-10">
+                {[
+                  'WTH! hourly check-in flow',
+                  'M.Y.B.E.D. daily priorities',
+                  'BeastMode 15-min intervals',
+                  'TODAY! full day overview',
+                  'Streak tracking & XP system',
+                  'Morning & Evening Flows',
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-3 text-sm">
+                    <span className="text-molten font-bold flex-shrink-0">✓</span>
+                    <span className="text-white/80">{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={STRIPE_PAYMENT_LINK}
+                className="block w-full bg-molten text-white py-5 rounded-2xl font-bold text-lg text-center hover:bg-molten-dark transition-all hover:shadow-xl hover:shadow-molten/40 transform hover:scale-105 active:scale-95 glow-pulse"
+              >
+                Get Access — $1 →
+              </a>
+            </div>
+          </div>
+
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/35 text-sm hover:text-white/65 transition-colors"
+          >
+            Just browsing? Try the free Freshman tier →
+          </a>
         </div>
       </section>
 

@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Dispatches from './pages/Dispatches'
 import DispatchView from './pages/DispatchView'
 import Store from './pages/Store'
+import Welcome from './pages/Welcome'
 import CampusLanding from './pages/CampusLanding'
 import RemoteLanding from './pages/RemoteLanding'
 import FoundersLanding from './pages/FoundersLanding'
@@ -26,6 +27,7 @@ function App() {
           <Route path="/dispatches" element={<Dispatches />} />
           <Route path="/dispatches/:id" element={<DispatchView />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/welcome" element={<Welcome />} />
         </Route>
         <Route path="/campus" element={<CampusLanding />} />
         <Route path="/remote" element={<RemoteLanding />} />
