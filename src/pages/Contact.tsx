@@ -8,6 +8,8 @@ const inquiryTypes = [
   { value: "affiliate", label: "Affiliate inquiry" },
 ];
 
+const FORMSPREE_ID = "xeelyzjp";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +18,8 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -25,9 +29,29 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(false);
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -39,7 +63,8 @@ export default function Contact() {
             Message <span className="text-molten">Sent!</span>
           </h1>
           <p className="text-lg sm:text-xl opacity-80 leading-relaxed mb-10">
-            Thanks for reaching out. We'll get back to you as soon as possible.
+            Thanks for reaching out. Our team at MCM Enterprises LLC will get
+            back to you within 2–3 business days.
           </p>
           <button
             onClick={() => {
@@ -65,6 +90,14 @@ export default function Contact() {
           <p className="text-xl text-white/70">
             Questions? Partnerships? Support? We're here.
           </p>
+          <div className="inline-flex flex-col items-center gap-1 mt-6 px-6 py-3 border border-white/10 rounded-xl bg-slate">
+            <span className="text-xs tracking-widest uppercase text-white/40">
+              Customer Operations
+            </span>
+            <span className="text-sm font-bold text-white/80">
+              MCM Enterprises LLC
+            </span>
+          </div>
         </div>
 
         {/* Touchpoint Cards */}
@@ -163,11 +196,18 @@ export default function Contact() {
               />
             </div>
 
+            {error && (
+              <p className="text-red-400 text-sm">
+                Something went wrong. Please try again or email us directly.
+              </p>
+            )}
+
             <button
               type="submit"
-              className="w-full bg-molten text-white py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-molten/50 hover:bg-molten-dark transition-all whitespace-nowrap overflow-hidden"
+              disabled={submitting}
+              className="w-full bg-molten text-white py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-molten/50 hover:bg-molten-dark transition-all whitespace-nowrap overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {submitting ? "Sending…" : "Send Message"}
             </button>
           </form>
         </div>
