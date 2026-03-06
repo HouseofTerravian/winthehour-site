@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { memo, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { APP_URL } from "../config";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
 import { Logo } from "../components/icons/Logo";
 import { ClockCheckIcon } from "../components/icons/ClockCheckIcon";
@@ -32,7 +33,7 @@ const MobileNav = memo(({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
             {item}
           </a>
         ))}
-        <Button className="mt-2">Get Started</Button>
+        <Button className="mt-2" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Get Started</Button>
       </nav>
     </motion.div>
   );
@@ -65,7 +66,7 @@ const CTASection = memo(({ dark = false }: { dark?: boolean }) => (
       <p className={`mb-8 ${dark ? 'text-white/70' : 'text-slate-600'}`}>
         Join thousands of students who stopped wondering where their time went.
       </p>
-      <Button size="lg">Start Winning Your Hours</Button>
+      <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Start Winning Your Hours</Button>
     </div>
   </section>
 ));
@@ -106,7 +107,7 @@ export default function CampusLanding() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button className="hidden md:inline-flex" size="sm">
+            <Button className="hidden md:inline-flex" size="sm" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>
               Get Started
             </Button>
             <button
@@ -142,7 +143,7 @@ export default function CampusLanding() {
               <p className="text-white/80 text-lg mb-8 max-w-lg">
                 Procrastination ends here. Win The Hour!™ keeps you accountable hour-by-hour so you actually finish that paper, ace that exam, and still have time to live.
               </p>
-              <Button size="lg">Join Free — Student Edition</Button>
+              <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Join Free — Student Edition</Button>
             </motion.div>
 
             <motion.div
@@ -274,7 +275,7 @@ export default function CampusLanding() {
             <p className="text-white/70 mb-8">
               Stop scrolling. Start winning. One hour at a time.
             </p>
-            <Button size="lg">Get Started Free</Button>
+            <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Get Started Free</Button>
           </motion.div>
         </div>
       </section>

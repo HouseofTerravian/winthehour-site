@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { APP_URL } from "../config";
 
 const tiers = [
   {
@@ -167,12 +168,14 @@ export default function Membership() {
                   ))}
                 </ul>
 
-                <Link
-                  to="/contact"
+                <a
+                  href={APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-full py-3 rounded-full font-semibold text-center transition-all block whitespace-nowrap overflow-hidden ${tier.btnClass}`}
                 >
                   {tier.cta}
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -289,12 +292,14 @@ export default function Membership() {
           <p className="text-xl text-white/80 mb-10">
             Free to start. Powerful when you upgrade.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
           >
             Download Now
-          </Link>
+          </a>
         </div>
       </section>
     </>

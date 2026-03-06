@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { APP_URL, STRIPE_PAYMENT_LINK } from "../config";
 
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
@@ -37,12 +36,14 @@ export default function Home() {
               Join high-performers building streaks, completing missions, and mastering their days through disciplined momentum.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Link
-                to="/membership"
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden glow-pulse"
               >
                 Start Free
-              </Link>
+              </a>
               <a
                 href={APP_URL}
                 target="_blank"
@@ -181,9 +182,11 @@ export default function Home() {
 
               <a
                 href={STRIPE_PAYMENT_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full bg-molten text-white py-5 rounded-2xl font-bold text-lg text-center hover:bg-molten-dark transition-all hover:shadow-xl hover:shadow-molten/40 transform hover:scale-105 active:scale-95 glow-pulse"
               >
-                Get Access — $1 →
+                Get the App — Free →
               </a>
             </div>
           </div>
@@ -209,12 +212,14 @@ export default function Home() {
             Win The Hour!™ is more than a planner. It's a ritual-based execution engine designed to help you become who you're meant to be — one hour at a time.
           </p>
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <Link
-              to="/membership"
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-molten text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-molten/50 hover:bg-molten-dark transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center whitespace-nowrap overflow-hidden"
             >
               Join The Movement
-            </Link>
+            </a>
             <a
               href={APP_URL}
               target="_blank"

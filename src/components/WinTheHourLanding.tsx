@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { APP_URL } from "../config";
 
 const HERO_IMAGE = "/wth-hero-female-web.jpg";
 const TESTIMONIAL_IMAGE = "/wth-hero-male-web.jpg";
@@ -46,7 +47,7 @@ export default function WinTheHourLanding() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="#contact" className="hidden md:inline-block bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:inline-block bg-[#FF5E1A] text-[#FFFFFF] px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95">
               Get Started
             </a>
             <button
@@ -75,7 +76,7 @@ export default function WinTheHourLanding() {
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-lg text-[#FFFFFF] hover:text-[#FF5E1A] transition-colors">
                 Contact
               </a>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-3 rounded-full font-semibold text-center shadow-lg hover:bg-[#E55517] transition-all mt-2">
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="bg-[#FF5E1A] text-[#FFFFFF] px-6 py-3 rounded-full font-semibold text-center shadow-lg hover:bg-[#E55517] transition-all mt-2">
                 Get Started
               </a>
             </div>
@@ -94,7 +95,7 @@ export default function WinTheHourLanding() {
             <p className="text-lg sm:text-xl lg:text-2xl text-[#FFFFFF] mb-10 opacity-90 leading-relaxed">
               Win The Hour!™ helps you achieve your goals by focusing on hourly targets and making every minute count.
             </p>
-            <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="bg-[#FF5E1A] text-[#FFFFFF] px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
               Join the Movement
             </a>
           </div>
@@ -185,7 +186,7 @@ export default function WinTheHourLanding() {
           <p className="text-lg sm:text-xl lg:text-2xl text-[#FFFFFF] mb-10 md:mb-12 opacity-80 leading-relaxed">
             Join thousands who are transforming their days, one hour at a time.
           </p>
-          <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
+          <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
             Join The Movement
           </a>
         </div>
@@ -223,7 +224,7 @@ export default function WinTheHourLanding() {
             <br className="hidden sm:block" />
             one hour at a time.
           </p>
-          <a href="#contact" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
+          <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="bg-[#FF5E1A] text-[#FFFFFF] px-10 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg shadow-xl hover:shadow-[#FF5E1A]/50 hover:bg-[#E55517] transition-all transform hover:scale-105 active:scale-95 inline-block">
             Join The Movement
           </a>
         </div>

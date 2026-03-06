@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { memo, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { APP_URL } from "../config";
 import { Card, CardTitle, CardDescription } from "../components/ui/card";
 import { Logo } from "../components/icons/Logo";
 import { ClockCheckIcon } from "../components/icons/ClockCheckIcon";
@@ -32,7 +33,7 @@ const MobileNav = memo(({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
             {item}
           </a>
         ))}
-        <Button className="mt-2">Get Started</Button>
+        <Button className="mt-2" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Get Started</Button>
       </nav>
     </motion.div>
   );
@@ -65,7 +66,7 @@ const CTASection = memo(({ dark = false }: { dark?: boolean }) => (
       <p className={`mb-8 ${dark ? 'text-white/70' : 'text-slate-600'}`}>
         Join thousands who've discovered their focus superpower.
       </p>
-      <Button size="lg">Start Your Focus Journey</Button>
+      <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Start Your Focus Journey</Button>
     </div>
   </section>
 ));
@@ -106,7 +107,7 @@ export default function FocusModeLanding() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button className="hidden md:inline-flex" size="sm">
+            <Button className="hidden md:inline-flex" size="sm" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>
               Get Started
             </Button>
             <button
@@ -142,7 +143,7 @@ export default function FocusModeLanding() {
               <p className="text-white/80 text-lg mb-8 max-w-lg">
                 Time blindness is real. Racing thoughts are real. Win The Hour!™ gives you the structure and check-ins your brain craves — without the shame.
               </p>
-              <Button size="lg">Try It Free — No Judgment</Button>
+              <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Try It Free — No Judgment</Button>
             </motion.div>
 
             <motion.div
@@ -274,7 +275,7 @@ export default function FocusModeLanding() {
             <p className="text-white/70 mb-8">
               Join thousands who've stopped fighting their minds and started winning their hours.
             </p>
-            <Button size="lg">Get Started Free</Button>
+            <Button size="lg" onClick={() => window.open(APP_URL, '_blank', 'noopener,noreferrer')}>Get Started Free</Button>
           </motion.div>
         </div>
       </section>
